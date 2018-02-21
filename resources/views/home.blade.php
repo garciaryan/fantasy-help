@@ -4,14 +4,10 @@
 
 @include('partials.sidenav')
 
-<div class="container">
+<div class="container flex-center">
   <div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
+    <a href="#" class="nav-link"><h1>Compare Players</h1></a>
+    <a href="#" class="nav-link"><h1>View Trends</h1></a>
   </div>
 </div>
 @endsection
