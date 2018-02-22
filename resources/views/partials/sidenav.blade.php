@@ -9,13 +9,13 @@
     </h6>
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">
+        <a class="nav-link active" href="{{ url('/home') }}">
           <span data-feather="home"></span>
           Home <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ url('/compare') }}">
           <span data-feather="file"></span>
           Compare
         </a>
