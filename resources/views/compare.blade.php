@@ -2,9 +2,9 @@
 
 @section('content')
 
-@include('partials.sidenav')
 
-<div class="container">
+<div class="container-fluid">
+@include('partials.sidenav')
   <div class="row">
     <div class="col-md-6">
       <button class="btn btn-primary" data-toggle="collapse" data-target="#add-player">Add Player</button>

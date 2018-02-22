@@ -8,6 +8,18 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  height: 92vh;
+}
+
+main {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -15,10 +27,18 @@
 
 .sidenav {
   border-right: solid 1px #000;
+  height: 100%;
 }
 
 .flex-center {
   display: flex;
+  height: 100%;
+}
+
+.flex-middle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
