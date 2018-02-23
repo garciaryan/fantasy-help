@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Player;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
@@ -16,9 +15,8 @@ class PlayerController extends Controller
       return view('compare');
     }
 
-    public function get_stats(Request $request)
+    public function get_stats()
     {
-      $client = new Client(['base_uri'=>'http://stats.nba.com/stats/leaguedashplayerstats?', 'timeout' => 5.0,]);
       $urlObj = [
         'College'=> '',
         'Conference'=> '',
@@ -56,14 +54,12 @@ class PlayerController extends Controller
         'VsDivision'=> '',
         'Weight'=> ''
       ];
-
       $headers = ['User-Agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'];
+      $client = new Client(['base_uri' => 'http://stats.nba.com/stats/leaguedashplayerstats?/', 'timeout' => 5.0]);
+      $request = new Request('GET', $client->withQuery(http_build_query($urlObj)));
+      $response = $request->getBody();
 
-      $result = $client->request('GET', 'http://stats.nba.com/stats/leaguedashplayerstats?',[
-        'headers' => $headers,
-        'query' => $urlObj
-      ]);
-      //$json = json_decode(file_get_contents($request), true);
-      echo($result->url);
+      dd($response);
     }
+
 }
