@@ -17,6 +17,8 @@ class PlayerController extends Controller
 
     public function get_stats()
     {
+      $season = '2017-18';
+      $seasonType = 'Regular Season';
       $urlObj = [
         '?College'=> '',
         'Conference'=> '',
@@ -44,9 +46,9 @@ class PlayerController extends Controller
         'PlayerPosition'=> '',
         'PlusMinus'=> 'N',
         'Rank'=> 'N',
-        'Season'=> '',
+        'Season'=> $season,
         'SeasonSegment'=> '',
-        'SeasonType'=> '',
+        'SeasonType'=> $seasonType,
         'ShotClockRange'=> '',
         'StarterBench'=> '',
         'TeamID'=> '0',
