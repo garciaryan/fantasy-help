@@ -28,11 +28,16 @@ class PlayerController extends Controller
         'Accept' => 'application/json'
         ]]);
 
-         echo $res->getBody();
+         $json = json_decode($res->getBody(), true);
+         $rowset = $json['resultSets'][0]['rowSet'];
+
+         
+
+         var_dump($rowset);
       }
       catch (RequestException $e) {
-        if ($e->getResponse()->getStatusCode() == '400'){
-          echo "Bad Request!";
+        if ($e){
+          echo "Something went wrong. Please try again.";
         }
       }
     }
