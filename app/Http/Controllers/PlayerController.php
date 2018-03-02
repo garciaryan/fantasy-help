@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+use App\Player;
 
 class PlayerController extends Controller
 {
@@ -28,12 +29,85 @@ class PlayerController extends Controller
         'Accept' => 'application/json'
         ]]);
 
-         $json = json_decode($res->getBody(), true);
-         $rowset = $json['resultSets'][0]['rowSet'];
+        $json = json_decode($res->getBody(), true);
+        $rowset = $json['resultSets'][0]['rowSet'];
 
-         
-
-         var_dump($rowset);
+        foreach($rowset as $data) {
+          $rewriteKeys = array(
+            '0' => 'player_id',
+            '1' => 'player_name',
+            '2' => 'team_id',
+            '3' => 'team_abbreviation',
+            '4' => 'age',
+            '5' => 'gp',
+            '6' => 'w',
+            '7' => 'l',
+            '8' => 'w_pct',
+            '9' => 'min',
+            '10' => 'fgm',
+            '11' => 'fga',
+            '12' => 'fg_pct',
+            '13' => 'fg3m',
+            '14' => 'fg3a',
+            '15' => 'fg3_pct',
+            '16' => 'ftm',
+            '17' => 'fta',
+            '18' => 'ft_pct',
+            '19' => 'oreb',
+            '20' => 'dreb',
+            '21' => 'reb',
+            '22' => 'ast',
+            '23' => 'tov',
+            '24' => 'stl',
+            '25' => 'blk',
+            '26' => 'blka',
+            '27' => 'pf',
+            '28' => 'pfd',
+            '29' => 'pts',
+            '30' => 'plus_minus',
+            '31' => 'nba_fantasy_pts',
+            '32' => 'dd2',
+            '33' => 'td3',
+            '34' => 'gp_rank',
+            '35' => 'w_rank',
+            '36' => 'l_rank',
+            '37' => 'w_pct_rank',
+            '38' => 'min_rank',
+            '39' => 'fgm_rank',
+            '40' => 'fga_rank',
+            '41' => 'fg_pct_rank',
+            '42' => 'fg3m_rank',
+            '43' => 'fg3a_rank',
+            '44' => 'fg3_pct_rank',
+            '45' => 'ftm_rank',
+            '46' => 'fta_rank',
+            '47' => 'ft_pct_rank',
+            '48' => 'oreb_rank',
+            '49' => 'dreb_rank',
+            '50' => 'reb_rank',
+            '51' => 'ast_rank',
+            '52' => 'tov_rank',
+            '53' => 'stl_rank',
+            '54' => 'blk_rank',
+            '55' => 'blka_rank',
+            '56' => 'pf_rank',
+            '57' => 'pfd_rank',
+            '58' => 'pts_rank',
+            '59' => 'plus_minus_rank',
+            '60' => 'nba_fantasy_pts_rank',
+            '61' => 'dd2_rank',
+            '62' => 'td3_rank',
+            '63' => 'cfid',
+            '64' => 'cfparams'
+          );
+          $player = array();
+          foreach ($data as $key => $value){
+            $player[ $rewriteKeys[$key] ] = $value;
+          }
+          //$update = Player::all();
+          //var_dump($update);
+          //$update->save();
+        }
       }
       catch (RequestException $e) {
         if ($e){
