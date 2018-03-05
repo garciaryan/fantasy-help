@@ -2,9 +2,9 @@
   <div class="container flex-middle">
     <div class="row">
       <div class="col-md-12">
-        <!-- <p v-for="player in players" :key="player">
-          {{ player.name }}
-        </p> -->
+        <!-- <span v-for="player in players" :key="player">
+          {{ players.player_name }}
+        </span> -->
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
     axios.get('players')
       .then(response => {
         self.players = response.data;
-        console.log(self.players);
+        console.log(response);
       }).catch(error => console.log(error))
   },
 

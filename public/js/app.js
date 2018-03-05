@@ -47321,7 +47321,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var self = this;
     axios.get('players').then(function (response) {
       self.players = response.data;
-      console.log(self.players);
+      console.log(response);
     }).catch(function (error) {
       return console.log(error);
     });

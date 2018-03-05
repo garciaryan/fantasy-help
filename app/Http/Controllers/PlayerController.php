@@ -119,7 +119,7 @@ class PlayerController extends Controller
     public function show()
     {
       $players = Player::all();
-      return view('players')->with('players', $players);
+      return view('players', ['players' => $players]);
     }
 
 }
