@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/compare', 'PlayerController@index');
-Route::get('/update', 'PlayerController@get_stats');
+Route::get('/update', 'PlayerController@store');

@@ -16,7 +16,7 @@ class PlayerController extends Controller
       return view('compare');
     }
 
-    public function get_stats()
+    public function store()
     {
       try {
 
@@ -114,6 +114,12 @@ class PlayerController extends Controller
           echo "Something went wrong. Please try again.";
         }
       }
+    }
+
+    public function show()
+    {
+      $players = Player::all();
+      return view('players')->with('players', $players);
     }
 
 }

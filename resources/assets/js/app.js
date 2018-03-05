@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('new-player', require('./components/newPlayer.vue'));
+Vue.component('all-players', require('./components/allPlayers.vue'));
 
 const app = new Vue({
     el: '#app'
