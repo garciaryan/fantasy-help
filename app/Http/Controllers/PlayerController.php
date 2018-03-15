@@ -104,9 +104,6 @@ class PlayerController extends Controller
           foreach ($data as $key => $value){
             $player[ $rewriteKeys[$key] ] = $value;
           }
-          //$update = Player::all();
-          //var_dump($update);
-          //$update->save();
         }
       }
       catch (RequestException $e) {
@@ -119,7 +116,7 @@ class PlayerController extends Controller
     public function show()
     {
       $players = Player::all();
-      return view('players', ['players' => $players]);
+      return $players;
     }
 
 }

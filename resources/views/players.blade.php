@@ -4,7 +4,7 @@
 
 
 <div class="container-fluid flex-center">
-@include('partials.sidenav')
+  <side-nav></side-nav>
   <all-players></all-players>
 </div>
 @endsection
