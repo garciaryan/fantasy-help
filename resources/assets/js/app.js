@@ -26,6 +26,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('new-player', require('./components/newPlayer.vue'));
 Vue.component('all-players', require('./components/allPlayers.vue'));
 Vue.component('side-nav', require('./components/sideNav.vue'));
+Vue.component('home', require('./components/home.vue'));
 
 const app = new Vue({
     el: '#app',

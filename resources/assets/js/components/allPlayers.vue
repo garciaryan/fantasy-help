@@ -16,7 +16,7 @@
 export default {
   mounted(){
     let self = this;
-    axios.get('/players')
+    axios.get('/api/players')
       .then(response => {
         self.players = response.data;
         console.log(self.players);
