@@ -1,23 +1,25 @@
 <template>
   <div class="col-md-10 table-container">
-    <div class="table-hover table-condensed table-responsive">
+    <div class="table-hover table-condensed table-responsive table-fixedheader">
       <table class="table">
-        <tr>
-          <th>Name</th>
-          <th>Team</th>
-          <th>FGA</th>
-          <th>FGM</th>
-          <th>FG%</th>
-          <th>3PTA</th>
-          <th>3PTA</th>
-          <th>3PT%</th>
-          <th>PTS</th>
-          <th>REB</th>
-          <th>AST</th>
-          <th>ST</th>
-          <th>BLK</th>
-          <th>TO</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>FGA</th>
+            <th>FGM</th>
+            <th>FG%</th>
+            <th>3PTA</th>
+            <th>3PTA</th>
+            <th>3PT%</th>
+            <th>PTS</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>ST</th>
+            <th>BLK</th>
+            <th>TO</th>
+          </tr>
+        </thead>
         <tr v-for="player in players" :key="player.id">
           <td>{{ player.player_name }}</td>
           <td>{{ player.team_abbreviation }}</td>
