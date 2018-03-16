@@ -2,9 +2,10 @@
   <div class="container flex-middle">
     <div class="row">
       <div class="col-md-12">
-        <span v-for="player in players" :key="player">
-          {{ player.player_name }}
-        </span>
+        <!-- Maybe a table to display data cleanly -->
+        <ul class="player-list" v-for="(player) in players">
+          <li :key="player">{{ player.player_name }} - {{ player.pts }}</li>
+        </ul>
       </div>
     </div>
   </div>

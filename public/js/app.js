@@ -49961,6 +49961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -49995,8 +49996,10 @@ var render = function() {
         "div",
         { staticClass: "col-md-12" },
         _vm._l(_vm.players, function(player) {
-          return _c("span", { key: player }, [
-            _vm._v("\n        " + _vm._s(player.player_name) + "\n      ")
+          return _c("ul", { staticClass: "player-list" }, [
+            _c("li", { key: player }, [
+              _vm._v(_vm._s(player.player_name) + " - " + _vm._s(player.pts))
+            ])
           ])
         })
       )
@@ -50714,7 +50717,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var routes = [{ path: '/api/players', name: 'players', component: __WEBPACK_IMPORTED_MODULE_1__components_allPlayers_vue___default.a }, { path: '/compare', name: 'compare', component: __WEBPACK_IMPORTED_MODULE_2__components_newPlayer_vue___default.a }, { path: '/', name: 'home', component: __WEBPACK_IMPORTED_MODULE_3__components_home_vue___default.a },
+var routes = [{ path: '/players', name: 'players', component: __WEBPACK_IMPORTED_MODULE_1__components_allPlayers_vue___default.a }, { path: '/compare', name: 'compare', component: __WEBPACK_IMPORTED_MODULE_2__components_newPlayer_vue___default.a }, { path: '/', name: 'home', component: __WEBPACK_IMPORTED_MODULE_3__components_home_vue___default.a },
 
 //catch stray routes
 { path: '*', redirect: '/' }];

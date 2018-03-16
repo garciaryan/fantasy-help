@@ -17,7 +17,7 @@ html, body {
   margin: 0;
 }
 
-a:hover {
+a:hover, .player-list {
   text-decoration: none;
 }
 
@@ -94,6 +94,7 @@ main {
 .sidenav {
   border-right: solid 1px #000;
   height: 100%;
+
 }
 
 .flex-center {
@@ -106,5 +107,6 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 

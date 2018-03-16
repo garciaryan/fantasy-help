@@ -10004,7 +10004,8 @@ body {
   margin: 0;
 }
 
-a:hover {
+a:hover,
+.player-list {
   text-decoration: none;
 }
 
@@ -10111,5 +10112,6 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
