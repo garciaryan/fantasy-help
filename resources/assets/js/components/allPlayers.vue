@@ -5,18 +5,34 @@
         <tr>
           <th>Name</th>
           <th>Team</th>
+          <th>FGA</th>
+          <th>FGM</th>
           <th>FG%</th>
-          <th>Pts</th>
-          <th>Reb</th>
-          <th>Ast</th>
+          <th>3PTA</th>
+          <th>3PTA</th>
+          <th>3PT%</th>
+          <th>PTS</th>
+          <th>REB</th>
+          <th>AST</th>
+          <th>ST</th>
+          <th>BLK</th>
+          <th>TO</th>
         </tr>
         <tr v-for="player in players" :key="player.id">
           <td>{{ player.player_name }}</td>
           <td>{{ player.team_abbreviation }}</td>
+          <td>{{ player.fta }}</td>
+          <td>{{ player.ftm }}</td>
+          <td>{{ player.fg3a }}</td>
+          <td>{{ player.fg3m }}</td>
+          <td>{{ player.fg3_pct }}</td>
           <td>{{ player.fg_pct }}</td>
           <td>{{ player.pts }}</td>
           <td>{{ player.reb }}</td>
           <td>{{ player.ast }}</td>
+          <td>{{ player.stl }}</td>
+          <td>{{ player.blk }}</td>
+          <td>{{ player.tov }}</td>
         </tr>
       </table>
     </div>

@@ -17657,6 +17657,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -17699,13 +17715,29 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
               _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fta))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.ftm))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3a))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3m))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
+              _vm._v(" "),
               _c("td", [_vm._v(_vm._s(player.fg_pct))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(player.pts))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(player.reb))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(player.ast))])
+              _c("td", [_vm._v(_vm._s(player.ast))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.stl))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.blk))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.tov))])
             ])
           })
         ],
@@ -17724,13 +17756,29 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Team")]),
       _vm._v(" "),
+      _c("th", [_vm._v("FGA")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("FGM")]),
+      _vm._v(" "),
       _c("th", [_vm._v("FG%")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Pts")]),
+      _c("th", [_vm._v("3PTA")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Reb")]),
+      _c("th", [_vm._v("3PTA")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Ast")])
+      _c("th", [_vm._v("3PT%")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("PTS")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("REB")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("AST")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("ST")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("BLK")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("TO")])
     ])
   }
 ]
