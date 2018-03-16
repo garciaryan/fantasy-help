@@ -3,8 +3,10 @@
 @section('content')
 
 
-<div class="container-fluid flex-center">
-  <side-nav></side-nav>
-  <router-view></router-view>
+<div class="container-fluid">
+  <div class="row">
+    <side-nav></side-nav>
+    <router-view></router-view>
+  </div>
 </div>
 @endsection

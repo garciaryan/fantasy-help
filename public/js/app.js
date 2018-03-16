@@ -17654,6 +17654,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -17682,28 +17685,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container flex-middle" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c(
-          "table",
-          { staticClass: "player-table" },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.players, function(player) {
-              return _c("tr", { key: player.id }, [
-                _c("td", [_vm._v(_vm._s(player.player_name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.pts))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fg_pct))])
-              ])
-            })
-          ],
-          2
-        )
-      ])
+  return _c("div", { staticClass: "col-md-10 table-container" }, [
+    _c("div", { staticClass: "table-hover table-condensed table-responsive" }, [
+      _c(
+        "table",
+        { staticClass: "table" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._l(_vm.players, function(player) {
+            return _c("tr", { key: player.id }, [
+              _c("td", [_vm._v(_vm._s(player.player_name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg_pct))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.pts))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.reb))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.ast))])
+            ])
+          })
+        ],
+        2
+      )
     ])
   ])
 }
@@ -17715,9 +17722,15 @@ var staticRenderFns = [
     return _c("tr", [
       _c("th", [_vm._v("Name")]),
       _vm._v(" "),
+      _c("th", [_vm._v("Team")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("FG%")]),
+      _vm._v(" "),
       _c("th", [_vm._v("Points")]),
       _vm._v(" "),
-      _c("th", [_vm._v("FG%")])
+      _c("th", [_vm._v("Rebounds")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Assists")])
     ])
   }
 ]

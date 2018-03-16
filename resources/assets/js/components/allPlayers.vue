@@ -1,21 +1,24 @@
 <template>
-  <div class="container flex-middle">
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Maybe a table to display data cleanly -->
-        <table class="player-table">
-          <tr>
-            <th>Name</th>
-            <th>Points</th>
-            <th>FG%</th>
-          </tr>
-          <tr v-for="player in players" :key="player.id">
-            <td>{{ player.player_name }}</td>
-            <td>{{ player.pts }}</td>
-            <td>{{ player.fg_pct }}</td>
-          </tr>
-        </table>
-      </div>
+  <div class="col-md-10 table-container">
+    <div class="table-hover table-condensed table-responsive">
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Team</th>
+          <th>FG%</th>
+          <th>Points</th>
+          <th>Rebounds</th>
+          <th>Assists</th>
+        </tr>
+        <tr v-for="player in players" :key="player.id">
+          <td>{{ player.player_name }}</td>
+          <td>{{ player.team_abbreviation }}</td>
+          <td>{{ player.fg_pct }}</td>
+          <td>{{ player.pts }}</td>
+          <td>{{ player.reb }}</td>
+          <td>{{ player.ast }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>

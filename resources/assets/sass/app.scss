@@ -94,7 +94,12 @@ main {
 .sidenav {
   border-right: solid 1px #000;
   height: 100%;
-
+  z-index: 1;
+  position: fixed;
+  overflow-x: hidden;
+  left: 0;
+  top: 0;
+  margin-top: 55px;
 }
 
 .flex-center {
@@ -111,8 +116,10 @@ main {
 }
 
 //All Players section
-.player-table {
+.table-container {
+  position: absolute;
+  overflow-y: scroll;
   height: 100%;
-  width: 100%;
+  left: 16%;
 }
 
