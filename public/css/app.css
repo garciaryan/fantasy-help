@@ -10072,6 +10072,11 @@ body {
   height: 92vh;
 }
 
+.main {
+  height: 100%;
+  width: 100%;
+}
+
 main {
   height: 100%;
 }
@@ -10084,11 +10089,16 @@ main {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: fixed;
+  width: 100%;
 }
 
 .sidenav {
   border-right: solid 1px #000;
   height: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
   z-index: 1;
   position: fixed;
   overflow-x: hidden;
@@ -10126,5 +10136,11 @@ main {
   overflow-y: scroll;
   height: 100%;
   left: 16%;
+  margin-top: 5%;
+  font-family: "Monospace", sans-serif;
+}
+
+.table-hover > table > tr:hover {
+  background-color: #f1ecec;
 }
 

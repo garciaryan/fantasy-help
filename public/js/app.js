@@ -17726,11 +17726,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("FG%")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Points")]),
+      _c("th", [_vm._v("Pts")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Rebounds")]),
+      _c("th", [_vm._v("Reb")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Assists")])
+      _c("th", [_vm._v("Ast")])
     ])
   }
 ]
@@ -17785,7 +17785,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container flex-middle" }, [
+  return _c("div", { staticClass: "container-fluid flex-middle" }, [
     _c(
       "div",
       { staticClass: "row" },

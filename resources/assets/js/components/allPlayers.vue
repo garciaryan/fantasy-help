@@ -6,9 +6,9 @@
           <th>Name</th>
           <th>Team</th>
           <th>FG%</th>
-          <th>Points</th>
-          <th>Rebounds</th>
-          <th>Assists</th>
+          <th>Pts</th>
+          <th>Reb</th>
+          <th>Ast</th>
         </tr>
         <tr v-for="player in players" :key="player.id">
           <td>{{ player.player_name }}</td>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex-middle">
+  <div class="container-fluid flex-middle">
     <div class="row">
       <div class="col-md-6">
         <button class="btn btn-primary" data-target="#add-player" id="add-player" v-on:click="show = !show">Add Player <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
