@@ -22,9 +22,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <span data-feather="shopping-cart"></span>
             Trends
           </a>
+        </li>
+        <li class="nav-item">
+          <router-link to="/players" class="nav-link">
+            All Players
+          </router-link>
         </li>
       </ul>
 
