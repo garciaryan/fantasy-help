@@ -1,8 +1,8 @@
 <template>
   <div class="col-md-10 table-container">
-    <div class="table-hover table-condensed table-responsive table-fixedheader">
+    <div class="table-hover table-condensed table-responsive">
       <table class="table">
-        <thead>
+        <thead class="players-header">
           <tr>
             <th>Name</th>
             <th>Team</th>
@@ -42,7 +42,6 @@
 </template>
 
 
-
 <script>
 export default {
   mounted(){
@@ -50,8 +49,10 @@ export default {
     axios.get('/api/players')
       .then(response => {
         self.players = response.data;
-        console.log(self.players);
-      }).catch(error => console.log(error))
+      }).catch(error => console.log(error));
+
+    // let $table = $('.table'); 
+    // $table.floatThead();
   },
 
   data: function() {

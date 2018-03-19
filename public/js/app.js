@@ -17674,17 +17674,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var self = this;
     axios.get('/api/players').then(function (response) {
       self.players = response.data;
-      console.log(self.players);
     }).catch(function (error) {
       return console.log(error);
     });
+
+    // let $table = $('.table'); 
+    // $table.floatThead();
   },
 
 
@@ -17704,55 +17705,48 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-md-10 table-container" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "table-hover table-condensed table-responsive table-fixedheader"
-      },
-      [
-        _c(
-          "table",
-          { staticClass: "table" },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.players, function(player) {
-              return _c("tr", { key: player.id }, [
-                _c("td", [_vm._v(_vm._s(player.player_name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fta))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.ftm))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fg3a))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fg3m))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.fg_pct))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.pts))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.reb))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.ast))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.stl))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.blk))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(player.tov))])
-              ])
-            })
-          ],
-          2
-        )
-      ]
-    )
+    _c("div", { staticClass: "table-hover table-condensed table-responsive" }, [
+      _c(
+        "table",
+        { staticClass: "table" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._l(_vm.players, function(player) {
+            return _c("tr", { key: player.id }, [
+              _c("td", [_vm._v(_vm._s(player.player_name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fta))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.ftm))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3a))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3m))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.fg_pct))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.pts))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.reb))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.ast))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.stl))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.blk))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(player.tov))])
+            ])
+          })
+        ],
+        2
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -17760,7 +17754,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
+    return _c("thead", { staticClass: "players-header" }, [
       _c("tr", [
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),

@@ -8,6 +8,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//login
+.login {
+  margin-top: 7%;
+}
+//main
 html, body {
   background-color: #fff;
   color: $gray;
@@ -81,6 +86,9 @@ body {
 .main {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
 }
 
 main {

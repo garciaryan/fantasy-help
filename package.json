@@ -20,6 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "floatthead": "^2.1.1",
         "vue-router": "^3.0.1"
     }
 }
