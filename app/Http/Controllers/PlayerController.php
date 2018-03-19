@@ -105,7 +105,7 @@ class PlayerController extends Controller
           foreach ($data as $key => $value){
             $player[ $rewriteKeys[$key] ] = $value;
           }
-          Player::updateOrCreate($player);
+          Player::updateOrCreate(['player_id' => $player['player_id']] ,$player);
         }
       }
       catch (RequestException $e) {
