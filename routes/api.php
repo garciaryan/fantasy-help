@@ -17,4 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/update-players', 'PlayerController@store');
+//Route::get('/remove-all', 'PlayerController@destroy');
 Route::get('/players', 'PlayerController@show');

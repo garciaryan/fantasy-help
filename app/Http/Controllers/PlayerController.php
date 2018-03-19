@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use App\Player;
+use DB;
 
 class PlayerController extends Controller
 {
@@ -104,6 +105,7 @@ class PlayerController extends Controller
           foreach ($data as $key => $value){
             $player[ $rewriteKeys[$key] ] = $value;
           }
+          Player::updateOrCreate($player);
         }
       }
       catch (RequestException $e) {
@@ -116,6 +118,12 @@ class PlayerController extends Controller
     public function show()
     {
       $players = Player::all();
+      return $players;
+    }
+
+    public function destroy()
+    {
+      $players = DB::table('players')->delete();
       return $players;
     }
 

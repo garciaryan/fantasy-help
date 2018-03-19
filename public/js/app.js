@@ -50318,7 +50318,7 @@ exports = module.exports = __webpack_require__(56)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50738,7 +50738,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50809,7 +50808,24 @@ var render = function() {
         _vm._v(" "),
         _vm._m(2),
         _vm._v(" "),
-        _vm._m(3)
+        _c("ul", { staticClass: "nav flex-column mb-2" }, [
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "nav-link", attrs: { to: "/players" } },
+                [_vm._v("\n          Current season\n        ")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4)
+        ])
       ])
     ]
   )
@@ -50877,40 +50893,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav flex-column mb-2" }, [
-      _c("li", { staticClass: "nav-item" }, [
-        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-          _c("span", { attrs: { "data-feather": "file-text" } }),
-          _vm._v("\n          Current season\n        ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "nav-item" }, [
-        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-          _c("span", { attrs: { "data-feather": "file-text" } }),
-          _vm._v("\n          Last season\n        ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "nav-item nav-link" }, [
-        _c("h6", { staticClass: "sidebar-heading mt-4 mb-1 text-muted" }, [
-          _c("span", [_vm._v("Search for a season")]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "d-flex align-items-center text-muted",
-              attrs: { href: "#" }
-            },
-            [_c("span", { attrs: { "data-feather": "plus-circle" } })]
-          )
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "date-search",
-          attrs: { type: "text", placeholder: "2017-18" }
-        })
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("span", { attrs: { "data-feather": "file-text" } }),
+        _vm._v("\n          Last season\n        ")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item nav-link" }, [
+      _c("h6", { staticClass: "sidebar-heading mt-4 mb-1 text-muted" }, [
+        _c("span", [_vm._v("Search for a season")]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "d-flex align-items-center text-muted",
+            attrs: { href: "#" }
+          },
+          [_c("span", { attrs: { "data-feather": "plus-circle" } })]
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "date-search",
+        attrs: { type: "text", placeholder: "2017-18" }
+      })
     ])
   }
 ]
