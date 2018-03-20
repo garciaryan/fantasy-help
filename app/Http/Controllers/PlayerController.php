@@ -11,12 +11,6 @@ use DB;
 
 class PlayerController extends Controller
 {
-    //
-    public function index ()
-    {
-      return view('compare');
-    }
-
     public function store()
     {
       try {

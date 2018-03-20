@@ -10144,12 +10144,24 @@ main {
 }
 
 .table-container {
-  position: absolute;
+  position: fixed;
   overflow-y: scroll;
   height: 100%;
   left: 16%;
   margin-top: 4%;
   font-family: "Monospace", sans-serif;
+}
+
+#floatTheadTable {
+  width: 100%;
+}
+
+.players-header {
+  background-color: #DBDBF0;
+}
+
+.name {
+  width: 23%;
 }
 
 .table-hover > table > tr:hover {
