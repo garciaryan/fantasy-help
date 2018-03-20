@@ -28495,6 +28495,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -28514,12 +28515,22 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 
   data: function data() {
     return {
-      players: []
+      players: [],
+      search: ''
     };
   },
 
   components: {
     FloatThead: __WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a
+  },
+
+  computed: {
+    filteredPlayers: function filteredPlayers() {
+      var self = this;
+      return self.players.filter(function (player) {
+        return player.player_name.toLowerCase().includes(self.search.toLowerCase());
+      });
+    }
   }
 });
 
@@ -41213,6 +41224,27 @@ var render = function() {
       "div",
       { staticClass: "table-hover table-condensed table-responsive" },
       [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.search,
+              expression: "search"
+            }
+          ],
+          attrs: { type: "text", placeholder: "Search players" },
+          domProps: { value: _vm.search },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.search = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
         _c(
           "float-thead-table",
           {
@@ -41234,7 +41266,7 @@ var render = function() {
               _vm._v(" "),
               _c("th", [_vm._v("3PTA")]),
               _vm._v(" "),
-              _c("th", [_vm._v("3PTA")]),
+              _c("th", [_vm._v("3PTM")]),
               _vm._v(" "),
               _c("th", [_vm._v("3PT%")]),
               _vm._v(" "),
@@ -41253,7 +41285,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.players, function(player) {
+              _vm._l(_vm.filteredPlayers, function(player) {
                 return _c("tr", { key: player.id }, [
                   _c("td", { staticClass: "name" }, [
                     _vm._v(_vm._s(player.player_name))
@@ -41261,17 +41293,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fta))]),
+                  _c("td", [_vm._v(_vm._s(player.fga))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.ftm))]),
+                  _c("td", [_vm._v(_vm._s(player.fgm))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(player.fg_pct))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(player.fg3a))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(player.fg3m))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fg_pct))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(player.pts))]),
                   _vm._v(" "),

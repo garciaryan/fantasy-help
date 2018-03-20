@@ -1,6 +1,7 @@
 <template>
   <div class="col-md-10 table-container">
     <div class="table-hover table-condensed table-responsive">
+      <input type="text" v-model="search" placeholder="Search players">
       <float-thead-table position="sticky" class="table" style="table-layout: fixed;">
         <thead class="players-header">
           <th class="name">Name</th>
@@ -9,7 +10,7 @@
           <th>FGM</th>
           <th>FG%</th>
           <th>3PTA</th>
-          <th>3PTA</th>
+          <th>3PTM</th>
           <th>3PT%</th>
           <th>PTS</th>
           <th>REB</th>
@@ -19,15 +20,15 @@
           <th>TO</th>
         </thead>
         <tbody>
-          <tr v-for="player in players" :key="player.id">
+          <tr v-for="player in filteredPlayers" :key="player.id">
             <td class="name">{{ player.player_name }}</td>
             <td>{{ player.team_abbreviation }}</td>
-            <td>{{ player.fta }}</td>
-            <td>{{ player.ftm }}</td>
+            <td>{{ player.fga }}</td>
+            <td>{{ player.fgm }}</td>
+            <td>{{ player.fg_pct }}</td>
             <td>{{ player.fg3a }}</td>
             <td>{{ player.fg3m }}</td>
             <td>{{ player.fg3_pct }}</td>
-            <td>{{ player.fg_pct }}</td>
             <td>{{ player.pts }}</td>
             <td>{{ player.reb }}</td>
             <td>{{ player.ast }}</td>
@@ -59,12 +60,22 @@ export default {
 
   data: function() {
     return {
-      players: []
+      players: [],
+      search: ''
     }
   },
 
   components: {
     FloatThead
+  },
+
+  computed: {
+    filteredPlayers(){
+      let self = this;
+      return self.players.filter(player => {
+        return player.player_name.toLowerCase().includes(self.search.toLowerCase())
+      })
+    }
   }
 }
 </script>
