@@ -88,7 +88,7 @@ body {
   width: 92%;
   display: flex;
   justify-content: center;
-  margin-left: 8%;
+  margin-left: 15%;
 }
 
 main {
@@ -136,9 +136,10 @@ main {
 .table-container {
   position: fixed;
   overflow-y: scroll;
-  height: 100%;
+  height: 75%;
   left: 16%;
   margin-top: 4%;
+  border-bottom: 1px solid #000;
   font-family: $main-font;
 }
 
@@ -152,6 +153,17 @@ main {
 
 .name {
   width: 23%;
+}
+
+.player-search {
+  
+}
+
+.search-component {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .table-hover > table > tr:hover {

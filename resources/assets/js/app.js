@@ -7,7 +7,7 @@
 
  import axios from 'axios';
  import VueRouter from 'vue-router';
- import routes from './routes.js';
+ import router from './routes.js';
 
 require('./bootstrap');
 
@@ -22,13 +22,14 @@ window.axios = axios;
 
 Vue.use(VueRouter);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+//Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('new-player', require('./components/newPlayer.vue'));
 Vue.component('all-players', require('./components/allPlayers.vue'));
 Vue.component('side-nav', require('./components/sideNav.vue'));
 Vue.component('home', require('./components/home.vue'));
+Vue.component('search', require('./components/search.vue'));
 
 const app = new Vue({
     el: '#app',
-    router: routes
+    router,
 });

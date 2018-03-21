@@ -1,7 +1,6 @@
 <template>
   <div class="col-md-10 table-container">
     <div class="table-hover table-condensed table-responsive">
-      <input type="text" v-model="search" placeholder="Search players">
       <float-thead-table position="sticky" class="table" style="table-layout: fixed;">
         <thead class="players-header">
           <th class="name">Name</th>
@@ -42,7 +41,6 @@
   </div>
 </template>
 
-
 <script>
 import FloatThead from 'vue-floatthead';
 import Vue from 'vue';
@@ -50,32 +48,14 @@ import Vue from 'vue';
 Vue.use(FloatThead);
 
 export default {
-  mounted(){
-    let self = this;
-    axios.get('/api/players')
-      .then(response => {
-        self.players = response.data;
-      }).catch(error => console.log(error));
-  },
-
-  data: function() {
-    return {
-      players: [],
-      search: ''
-    }
-  },
+  props: [
+    'player',
+    'filteredPlayers'
+  ],
 
   components: {
     FloatThead
-  },
-
-  computed: {
-    filteredPlayers(){
-      let self = this;
-      return self.players.filter(player => {
-        return player.player_name.toLowerCase().includes(self.search.toLowerCase())
-      })
-    }
   }
 }
 </script>
+
