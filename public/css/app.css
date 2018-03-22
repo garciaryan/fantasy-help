@@ -10078,7 +10078,7 @@ body {
 
 .main {
   height: 100%;
-  width: 92%;
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10148,7 +10148,7 @@ main {
   overflow-y: scroll;
   height: 75%;
   left: 16%;
-  margin-top: 4%;
+  margin-top: 5%;
   border-bottom: 1px solid #000;
   font-family: "Monospace", sans-serif;
 }

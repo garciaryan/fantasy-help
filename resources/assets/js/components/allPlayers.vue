@@ -3,20 +3,22 @@
     <div class="table-hover table-condensed table-responsive">
       <float-thead-table position="sticky" class="table" style="table-layout: fixed;">
         <thead class="players-header">
-          <th class="name">Name</th>
-          <th>Team</th>
-          <th>FGA</th>
-          <th>FGM</th>
-          <th>FG%</th>
-          <th>3PTA</th>
-          <th>3PTM</th>
-          <th>3PT%</th>
-          <th>PTS</th>
-          <th>REB</th>
-          <th>AST</th>
-          <th>ST</th>
-          <th>BLK</th>
-          <th>TO</th>
+          <tr>
+            <th class="name">Name</th>
+            <th>Team</th>
+            <th>FGA</th>
+            <th>FGM</th>
+            <th>FG%</th>
+            <th>3PTA</th>
+            <th>3PTM</th>
+            <th>3PT%</th>
+            <th>PTS</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>ST</th>
+            <th>BLK</th>
+            <th>TO</th>
+          </tr>
         </thead>
         <tbody>
           <tr v-for="player in filteredPlayers" :key="player.id">

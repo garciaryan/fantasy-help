@@ -1,8 +1,10 @@
 <template>
   <div class="row">
     <all-players :filteredPlayers="filteredPlayers"></all-players>
+    <div class="row">
     <div class="col-md-12 search-component">
       <input type="text" v-on:keyup="searchPlayers()" v-model="search" placeholder="Search players" class="player-search">
+    </div>
     </div>
   </div>
 </template>
