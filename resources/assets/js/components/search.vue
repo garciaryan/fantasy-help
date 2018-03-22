@@ -38,7 +38,7 @@ export default {
       searchPlayers(){
       let self = this;
       self.filteredPlayers = self.players.filter(player => {
-        return player.player_name.toLowerCase().includes(self.search.replace(/ /g,'').toLowerCase())
+        return player.player_name.toLowerCase().includes(self.search.toLowerCase())
       })
     }
   },

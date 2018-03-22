@@ -41542,7 +41542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     searchPlayers: function searchPlayers() {
       var self = this;
       self.filteredPlayers = self.players.filter(function (player) {
-        return player.player_name.toLowerCase().includes(self.search.replace(/ /g, '').toLowerCase());
+        return player.player_name.toLowerCase().includes(self.search.toLowerCase());
       });
     }
   },
