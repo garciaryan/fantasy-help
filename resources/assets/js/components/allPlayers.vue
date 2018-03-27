@@ -4,24 +4,24 @@
       <float-thead-table position="sticky" class="table" style="table-layout: fixed;">
         <thead class="players-header">
           <tr>
-            <th class="name">Name</th>
-            <th>Team</th>
-            <th>FGA</th>
-            <th>FGM</th>
-            <th>FG%</th>
-            <th>3PTA</th>
-            <th>3PTM</th>
-            <th>3PT%</th>
-            <th>PTS</th>
-            <th>REB</th>
-            <th>AST</th>
-            <th>ST</th>
-            <th>BLK</th>
-            <th>TO</th>
+            <th class="name" @click="sort('player_name')">Name</th>
+            <th @click="sort('team_abbreviation')">Team</th>
+            <th @click="sort('fga')">FGA</th>
+            <th @click="sort('fgm')">FGM</th>
+            <th @click="sort('fg_pct')">FG%</th>
+            <th @click="sort('fg3a')">3PTA</th>
+            <th @click="sort('fg3m')">3PTM</th>
+            <th @click="sort('fg3_pct')">3PT%</th>
+            <th @click="sort('pts')">PTS</th>
+            <th @click="sort('reb')">REB</th>
+            <th @click="sort('ast')">AST</th>
+            <th @click="sort('stl')">ST</th>
+            <th @click="sort('blk')">BLK</th>
+            <th @click="sort('tov')">TO</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="player in filteredPlayers" :key="player.id">
+          <tr v-for="player in sortedPlayers" :key="player.id">
             <td class="name">{{ player.player_name }}</td>
             <td>{{ player.team_abbreviation }}</td>
             <td>{{ player.fga }}</td>
@@ -51,8 +51,10 @@ Vue.use(FloatThead);
 
 export default {
   props: [
-    'player',
-    'filteredPlayers'
+    'sortedPlayers',
+    'sort',
+    'currentSort',
+    'currentSortDir'
   ],
 
   components: {

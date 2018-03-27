@@ -137,6 +137,7 @@ main {
   position: fixed;
   overflow-y: scroll;
   height: 75%;
+  z-index: 10;
   left: 16%;
   margin-top: 5%;
   border-bottom: 1px solid #000;
@@ -153,10 +154,6 @@ main {
 
 .name {
   width: 23%;
-}
-
-.player-search {
-  
 }
 
 .search-component {

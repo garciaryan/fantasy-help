@@ -4,9 +4,9 @@
 
 
 <div class="container-fluid main">
-  <div class="row">
+  <!-- <div class="row"> -->
     <side-nav></side-nav>
     <router-view></router-view>
-  </div>
+  <!-- </div> -->
 </div>
 @endsection

@@ -28554,7 +28554,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['player', 'filteredPlayers'],
+  props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir'],
 
   components: {
     FloatThead: __WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a
@@ -41261,39 +41261,180 @@ var render = function() {
           [
             _c("thead", { staticClass: "players-header" }, [
               _c("tr", [
-                _c("th", { staticClass: "name" }, [_vm._v("Name")]),
+                _c(
+                  "th",
+                  {
+                    staticClass: "name",
+                    on: {
+                      click: function($event) {
+                        _vm.sort("player_name")
+                      }
+                    }
+                  },
+                  [_vm._v("Name")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("Team")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("team_abbreviation")
+                      }
+                    }
+                  },
+                  [_vm._v("Team")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("FGA")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fga")
+                      }
+                    }
+                  },
+                  [_vm._v("FGA")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("FGM")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fgm")
+                      }
+                    }
+                  },
+                  [_vm._v("FGM")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("FG%")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fg_pct")
+                      }
+                    }
+                  },
+                  [_vm._v("FG%")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("3PTA")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fg3a")
+                      }
+                    }
+                  },
+                  [_vm._v("3PTA")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("3PTM")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fg3m")
+                      }
+                    }
+                  },
+                  [_vm._v("3PTM")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("3PT%")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("fg3_pct")
+                      }
+                    }
+                  },
+                  [_vm._v("3PT%")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("PTS")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("pts")
+                      }
+                    }
+                  },
+                  [_vm._v("PTS")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("REB")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("reb")
+                      }
+                    }
+                  },
+                  [_vm._v("REB")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("AST")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("ast")
+                      }
+                    }
+                  },
+                  [_vm._v("AST")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("ST")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("stl")
+                      }
+                    }
+                  },
+                  [_vm._v("ST")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("BLK")]),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("blk")
+                      }
+                    }
+                  },
+                  [_vm._v("BLK")]
+                ),
                 _vm._v(" "),
-                _c("th", [_vm._v("TO")])
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.sort("tov")
+                      }
+                    }
+                  },
+                  [_vm._v("TO")]
+                )
               ])
             ]),
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.filteredPlayers, function(player) {
+              _vm._l(_vm.sortedPlayers, function(player) {
                 return _c("tr", { key: player.id }, [
                   _c("td", { staticClass: "name" }, [
                     _vm._v(_vm._s(player.player_name))
@@ -41511,6 +41652,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -41530,7 +41676,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       players: [],
       filteredPlayers: [],
-      search: ''
+      search: '',
+      currentSort: 'name',
+      currentSortDir: 'desc'
     };
   },
 
@@ -41544,10 +41692,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       self.filteredPlayers = self.players.filter(function (player) {
         return player.player_name.toLowerCase().includes(self.search.toLowerCase());
       });
+    },
+
+
+    sort: function sort(s) {
+      if (s === this.currentSort) {
+        this.currentSortDir = this.currentSortDir === 'desc' ? 'asc' : 'desc';
+      }
+      this.currentSort = s;
     }
+
   },
 
-  computed: {}
+  computed: {
+    sortedPlayers: function sortedPlayers() {
+      var _this = this;
+
+      return this.filteredPlayers.sort(function (a, b) {
+        var modifier = 1;
+        if (_this.currentSortDir === 'asc') modifier = -1;
+        if (a[_this.currentSort] < b[_this.currentSort]) return -1 * modifier;
+        if (a[_this.currentSort] > b[_this.currentSort]) return 1 * modifier;
+        return 0;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -41562,7 +41731,15 @@ var render = function() {
     "div",
     { staticClass: "row" },
     [
-      _c("all-players", { attrs: { filteredPlayers: _vm.filteredPlayers } }),
+      _c("all-players", {
+        attrs: {
+          filteredPlayers: _vm.filteredPlayers,
+          sort: _vm.sort,
+          currentSort: _vm.currentSort,
+          currentSortDir: _vm.currentSortDir,
+          sortedPlayers: _vm.sortedPlayers
+        }
+      }),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12 search-component" }, [
