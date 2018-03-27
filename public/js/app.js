@@ -28596,7 +28596,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir'],
+  props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir', 'active', 'showPlus'],
 
   components: {
     FloatThead: __WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a
@@ -42141,37 +42141,73 @@ var render = function() {
             _c(
               "tbody",
               _vm._l(_vm.sortedPlayers, function(player) {
-                return _c("tr", { key: player.id }, [
-                  _c("td", { staticClass: "name" }, [
-                    _vm._v(_vm._s(player.player_name))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fga))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fgm))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fg_pct))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fg3a))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fg3m))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.pts))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.reb))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.ast))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.stl))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.blk))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(player.tov))])
-                ])
+                return _c(
+                  "tr",
+                  {
+                    key: player.id,
+                    on: {
+                      mouseenter: function($event) {
+                        _vm.showPlus(player)
+                      },
+                      mouseleave: function($event) {
+                        _vm.showPlus(player)
+                      }
+                    }
+                  },
+                  [
+                    _c("td", { staticClass: "name" }, [
+                      _vm._v(_vm._s(player.player_name) + " "),
+                      _vm.active == player.id
+                        ? _c("span", [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "first-col",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 20 20"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fga))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fgm))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fg_pct))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fg3a))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fg3m))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.fg3_pct))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.pts))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.reb))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.ast))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.stl))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.blk))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.tov))])
+                  ]
+                )
               })
             )
           ]
@@ -42363,6 +42399,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -42384,7 +42422,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       filteredPlayers: [],
       search: '',
       currentSort: 'name',
-      currentSortDir: 'desc'
+      currentSortDir: 'desc',
+      active: false
     };
   },
 
@@ -42406,6 +42445,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.currentSortDir = this.currentSortDir === 'desc' ? 'asc' : 'desc';
       }
       this.currentSort = s;
+    },
+
+    showPlus: function showPlus(player) {
+      this.active = player.id;
     }
 
   },
@@ -42442,6 +42485,8 @@ var render = function() {
           filteredPlayers: _vm.filteredPlayers,
           sort: _vm.sort,
           currentSort: _vm.currentSort,
+          active: _vm.active,
+          showPlus: _vm.showPlus,
           currentSortDir: _vm.currentSortDir,
           sortedPlayers: _vm.sortedPlayers
         }

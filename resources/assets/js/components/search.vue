@@ -3,6 +3,8 @@
     <all-players :filteredPlayers="filteredPlayers"
                  :sort="sort"
                  :currentSort="currentSort"
+                 :active="active"
+                 :showPlus="showPlus"
                  :currentSortDir="currentSortDir" 
                  :sortedPlayers="sortedPlayers">
     </all-players>
@@ -33,7 +35,8 @@ export default {
       filteredPlayers:[],
       search: '',
       currentSort: 'name',
-      currentSortDir: 'desc'
+      currentSortDir: 'desc',
+      active: false
     }
   },
 
@@ -47,13 +50,17 @@ export default {
       self.filteredPlayers = self.players.filter(player => {
         return player.player_name.toLowerCase().includes(self.search.toLowerCase())
       })
-  },
+    },
 
     sort: function(s) {
       if(s === this.currentSort){
         this.currentSortDir = this.currentSortDir ==='desc' ? 'asc' : 'desc';
       }
       this.currentSort = s;
+    },
+
+    showPlus: function(player){
+      this.active = player.id;
     }
 
   },
