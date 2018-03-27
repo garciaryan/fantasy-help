@@ -10143,6 +10143,19 @@ main {
   position: relative;
 }
 
+.first-col {
+  height: 16px;
+}
+
+.players-header > tr > th {
+  padding: 0.75em 0.10em;
+}
+
+.column-arrow {
+  height: 16px;
+  float: right;
+}
+
 .table-container {
   position: fixed;
   overflow-y: scroll;

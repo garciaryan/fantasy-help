@@ -28547,6 +28547,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -41271,7 +41313,52 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Name")]
+                  [
+                    _vm._v("Name\n            "),
+                    _vm.currentSortDir === "desc" &&
+                    _vm.currentSort === "player_name"
+                      ? _c(
+                          "svg",
+                          {
+                            staticClass: "first-col",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                              }
+                            })
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.currentSortDir === "asc" &&
+                    _vm.currentSort === "player_name"
+                      ? _c(
+                          "svg",
+                          {
+                            staticClass: "first-col",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                              }
+                            })
+                          ]
+                        )
+                      : _vm._e()
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41283,7 +41370,56 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Team")]
+                  [
+                    _vm._v("Team\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "team_abbreviation"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" &&
+                      _vm.currentSort === "team_abbreviation"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41295,7 +41431,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("FGA")]
+                  [
+                    _vm._v("FGA\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "fga"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "fga"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41307,7 +41490,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("FGM")]
+                  [
+                    _vm._v("FGM\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "fgm"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "fgm"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41319,7 +41549,56 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("FG%")]
+                  [
+                    _vm._v("FG%\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "fg_pct"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" &&
+                      _vm.currentSort === "fg_pct"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41331,7 +41610,55 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("3PTA")]
+                  [
+                    _vm._v("3PTA\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "fg3a"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "fg3a"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41343,7 +41670,55 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("3PTM")]
+                  [
+                    _vm._v("3PTM\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "fg3m"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "fg3m"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41355,7 +41730,56 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("3PT%")]
+                  [
+                    _vm._v("3PT%\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "fg3_pct"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" &&
+                      _vm.currentSort === "fg3_pct"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41367,7 +41791,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("PTS")]
+                  [
+                    _vm._v("PTS\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "pts"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "pts"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41379,7 +41850,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("REB")]
+                  [
+                    _vm._v("REB\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "reb"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "reb"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41391,7 +41909,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("AST")]
+                  [
+                    _vm._v("AST\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "ast"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "ast"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41403,7 +41968,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("ST")]
+                  [
+                    _vm._v("ST\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "stl"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "stl"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41415,7 +42027,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("BLK")]
+                  [
+                    _vm._v("BLK\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "blk"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "blk"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -41427,7 +42086,54 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("TO")]
+                  [
+                    _vm._v("TO\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" && _vm.currentSort === "tov"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" && _vm.currentSort === "tov"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
                 )
               ])
             ]),
