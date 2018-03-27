@@ -9,8 +9,8 @@
               <svg v-if="currentSortDir === 'asc' && currentSort === 'player_name'" class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
               </th>
             <th @click="sort('team_abbreviation')">Team
-              <span><svg v-if="currentSortDir === 'desc' && currentSort === 'team_abbreviation'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
-              <span><svg v-if="currentSortDir === 'asc' && currentSort === 'team_abbreviation'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
+              <span><svg v-if="currentSortDir === 'desc' && currentSort === 'team_abbreviation'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
+              <span><svg v-if="currentSortDir === 'asc' && currentSort === 'team_abbreviation'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>
             <th @click="sort('fga')">FGA
               <span><svg v-if="currentSortDir === 'desc' && currentSort ==='fga'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
@@ -24,15 +24,15 @@
               <span><svg v-if="currentSortDir === 'desc' && currentSort === 'fg_pct'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort ==='fg_pct'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>
-            <th @click="sort('fg3a')">3PTA
+            <th @click="sort('fg3a')">3PA
               <span><svg v-if="currentSortDir === 'desc' && currentSort === 'fg3a'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort ==='fg3a'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>
-            <th @click="sort('fg3m')">3PTM
+            <th @click="sort('fg3m')">3PM
               <span><svg v-if="currentSortDir === 'desc' && currentSort ==='fg3m'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort ==='fg3m'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>
-            <th @click="sort('fg3_pct')">3PT%
+            <th @click="sort('fg3_pct')">3P%
               <span><svg v-if="currentSortDir === 'desc' && currentSort ==='fg3_pct'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort ==='fg3_pct'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>

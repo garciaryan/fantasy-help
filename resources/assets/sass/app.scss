@@ -137,13 +137,16 @@ main {
   height: 16px;
 }
 
+.team-col {
+  float: right;
+}
+
 .players-header>tr>th {
-  padding: 0.75em 0.10em;
+  padding: 0.75em 0.3em;
 }
 
 .column-arrow {
   height: 16px;
-  float: right;
 }
 
 .table-container {

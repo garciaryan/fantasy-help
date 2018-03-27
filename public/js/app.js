@@ -41378,7 +41378,7 @@ var render = function() {
                         ? _c(
                             "svg",
                             {
-                              staticClass: "column-arrow",
+                              staticClass: "column-arrow team-col",
                               attrs: {
                                 xmlns: "http://www.w3.org/2000/svg",
                                 viewBox: "0 0 20 20"
@@ -41402,7 +41402,7 @@ var render = function() {
                         ? _c(
                             "svg",
                             {
-                              staticClass: "column-arrow",
+                              staticClass: "column-arrow team-col",
                               attrs: {
                                 xmlns: "http://www.w3.org/2000/svg",
                                 viewBox: "0 0 20 20"
@@ -41611,7 +41611,7 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v("3PTA\n            "),
+                    _vm._v("3PA\n            "),
                     _c("span", [
                       _vm.currentSortDir === "desc" &&
                       _vm.currentSort === "fg3a"
@@ -41671,7 +41671,7 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v("3PTM\n            "),
+                    _vm._v("3PM\n            "),
                     _c("span", [
                       _vm.currentSortDir === "desc" &&
                       _vm.currentSort === "fg3m"
@@ -41731,7 +41731,7 @@ var render = function() {
                     }
                   },
                   [
-                    _vm._v("3PT%\n            "),
+                    _vm._v("3P%\n            "),
                     _c("span", [
                       _vm.currentSortDir === "desc" &&
                       _vm.currentSort === "fg3_pct"
