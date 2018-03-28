@@ -1,20 +1,16 @@
 <template>
-  <div class="col-md-6">
-    
+  <div class="col-md-6 flx-end" id="player-snack">
+
   </div>
 </template>
 
 <script>
-import allPlayers from './allPlayers';
-
 export default {
   props: [
-    'showPlus',
+    'sortedPlayers'
   ],
 
-  components: {
-    allPlayers
-  }
+  
 }
 </script>
 

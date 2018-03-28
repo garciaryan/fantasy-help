@@ -42212,7 +42212,8 @@ var render = function() {
                         staticClass: "name",
                         attrs: {
                           "data-toggle": "snackbar",
-                          "data-content": player.player_name
+                          "data-html-allowed": "true",
+                          "data-content": "<player-tabs></player-tabs>"
                         }
                       },
                       [
@@ -42294,23 +42295,16 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allPlayers__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allPlayers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__allPlayers__);
 //
 //
 //
 //
 //
 //
-
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['showPlus'],
+  props: ['sortedPlayers']
 
-  components: {
-    allPlayers: __WEBPACK_IMPORTED_MODULE_0__allPlayers___default.a
-  }
 });
 
 /***/ }),
@@ -42321,7 +42315,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-6" })
+  return _c("div", {
+    staticClass: "col-md-6 flx-end",
+    attrs: { id: "player-snack" }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
