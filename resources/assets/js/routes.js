@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router';
 import allPlayers from './components/allPlayers.vue';
+import playerTabs from './components/playerTabs';
 import newPlayer from './components/newPlayer.vue';
 import home from './components/home.vue';
 import search from './components/search.vue';

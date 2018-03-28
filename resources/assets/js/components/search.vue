@@ -1,23 +1,23 @@
 <template>
-  <div class="row">
+  <div class="row row-full-width">
     <all-players :filteredPlayers="filteredPlayers"
-                 :sort="sort"
-                 :currentSort="currentSort"
-                 :active="active"
-                 :showPlus="showPlus"
-                 :currentSortDir="currentSortDir" 
-                 :sortedPlayers="sortedPlayers">
+                :sort="sort"
+                :currentSort="currentSort"
+                :active="active"
+                :showPlus="showPlus"
+                :currentSortDir="currentSortDir" 
+                :sortedPlayers="sortedPlayers">
     </all-players>
-    <div class="row">
-    <div class="col-md-12 search-component">
+    <div class="col-md-6 flx-end">
       <input type="text" v-on:keyup="searchPlayers()" v-model="search" placeholder="Search players" class="player-search">
     </div>
-    </div>
+    <player-tabs></player-tabs>
   </div>
 </template>
 
 <script>
 import allPlayers from './allPlayers.vue';
+import playerTabs from './playerTabs.vue';
 
 export default {
   mounted(){
@@ -41,7 +41,8 @@ export default {
   },
 
   components: {
-    allPlayers
+    allPlayers,
+    playerTabs
   },
 
   methods:{

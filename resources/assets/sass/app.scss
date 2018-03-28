@@ -80,7 +80,7 @@ a:hover, .player-list {
 }
 
 body {
-  height: 92vh;
+  height: 100vh;
 }
 
 .main {
@@ -130,6 +130,19 @@ main {
   flex-direction: column;
   justify-content: center;
   position: relative;
+}
+
+.row-full-width {
+  width: 100%;
+}
+
+.flx-end {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3em;
+  padding-right: 0;
 }
 
 //All Players section
