@@ -17,7 +17,9 @@
         <li class="nav-item">
           <router-link to="/compare" class="nav-link">
             <span data-feather="file"></span>
+            <!-- Add counter for each player clicked -->
             Compare
+            <span class="badge badge-danger">3</span>
           </router-link>
         </li>
         <li class="nav-item">
@@ -66,10 +68,17 @@
 </template>
 <script>
 export default {
-  
+  data: function() {
+    return {
+      playerCount: 0
+    }
+  },
 
+  methods: {
+    count(){
+      let self = this;
+
+    }
+  }
 }
 </script>
-<style>
-
-</style>

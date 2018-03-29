@@ -28,7 +28,6 @@ Vue.component('all-players', require('./components/allPlayers.vue'));
 Vue.component('side-nav', require('./components/sideNav.vue'));
 Vue.component('home', require('./components/home.vue'));
 Vue.component('search', require('./components/search.vue'));
-Vue.component('player-tabs', require('./components/playerTabs.vue'));
 
 const app = new Vue({
     el: '#app',

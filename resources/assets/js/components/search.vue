@@ -8,16 +8,14 @@
                 :currentSortDir="currentSortDir" 
                 :sortedPlayers="sortedPlayers">
     </all-players>
-    <div class="col-md-6 flx-end">
+    <div class="col-md-12 flx-end">
       <input type="text" v-on:keyup="searchPlayers()" v-model="search" placeholder="Search players" class="player-search">
     </div>
-    <player-tabs></player-tabs>
   </div>
 </template>
 
 <script>
 import allPlayers from './allPlayers.vue';
-import playerTabs from './playerTabs.vue';
 
 export default {
   mounted(){
@@ -41,8 +39,7 @@ export default {
   },
 
   components: {
-    allPlayers,
-    playerTabs
+    allPlayers
   },
 
   methods:{
