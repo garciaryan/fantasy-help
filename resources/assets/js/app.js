@@ -8,6 +8,7 @@
  import axios from 'axios';
  import VueRouter from 'vue-router';
  import router from './routes.js';
+ import store from './store.js';
 
 require('./bootstrap');
 
@@ -19,7 +20,6 @@ window.axios = axios;
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 Vue.use(VueRouter);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
@@ -30,6 +30,17 @@ Vue.component('home', require('./components/home.vue'));
 Vue.component('search', require('./components/search.vue'));
 
 const app = new Vue({
-    el: '#app',
-    router,
+  el: '#app',
+  router,
+  store,
+  computed: {
+    count(){
+      return store.state.count;
+    }
+  },
+  methods: {
+    increment(){
+      store.commit('increment');
+    }
+  }
 });

@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "vue-floatthead": "0.0.5",
-        "vue-router": "^3.0.1"
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
     }
 }

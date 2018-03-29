@@ -19,7 +19,7 @@
             <span data-feather="file"></span>
             <!-- Add counter for each player clicked -->
             Compare
-            <span class="badge badge-danger">3</span>
+            <span class="badge badge-danger" v-if="count >= 1">{{ count }}</span>
           </router-link>
         </li>
         <li class="nav-item">
@@ -68,16 +68,9 @@
 </template>
 <script>
 export default {
-  data: function() {
-    return {
-      playerCount: 0
-    }
-  },
-
-  methods: {
+  computed: {
     count(){
-      let self = this;
-
+      //return this.$state.store.count;
     }
   }
 }

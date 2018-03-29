@@ -6,7 +6,8 @@
                 :active="active"
                 :showPlus="showPlus"
                 :currentSortDir="currentSortDir" 
-                :sortedPlayers="sortedPlayers">
+                :sortedPlayers="sortedPlayers"
+                >
     </all-players>
     <div class="col-md-12 flx-end">
       <input type="text" v-on:keyup="searchPlayers()" v-model="search" placeholder="Search players" class="player-search">
