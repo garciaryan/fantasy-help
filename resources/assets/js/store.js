@@ -1,4 +1,4 @@
-import Vuex from 'Vuex';
+import Vuex from 'vuex';
 window.Vue = require('vue');
 
 Vue.use(Vuex);
@@ -8,7 +8,9 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
-    increment: state => state.count++
+    increment(state){
+      state.count++;
+    }
   }
 });
 

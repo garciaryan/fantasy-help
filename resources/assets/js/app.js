@@ -33,11 +33,6 @@ const app = new Vue({
   el: '#app',
   router,
   store,
-  computed: {
-    count(){
-      return store.state.count;
-    }
-  },
   methods: {
     increment(){
       store.commit('increment');

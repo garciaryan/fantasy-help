@@ -19,6 +19,12 @@
 import allPlayers from './allPlayers.vue';
 
 export default {
+
+  created(){
+    let self = this;
+    axios.get('/api/update-players')
+  },
+
   mounted(){
     let self = this;
     axios.get('/api/players')

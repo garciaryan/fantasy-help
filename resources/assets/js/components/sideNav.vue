@@ -70,8 +70,8 @@
 export default {
   computed: {
     count(){
-      //return this.$state.store.count;
+      return this.$store.state.count;
     }
-  }
+  },
 }
 </script>

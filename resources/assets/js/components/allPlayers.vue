@@ -105,8 +105,8 @@ export default {
     FloatThead
   },
 
-  computed: {
-    increment(){      
+  methods: {
+    increment(){
       return this.$store.commit('increment');
     }
   }

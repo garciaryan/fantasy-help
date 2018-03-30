@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/update-players', 'PlayerController@store');
-//Route::get('/remove-all', 'PlayerController@destroy');
 Route::get('/players', 'PlayerController@show');
