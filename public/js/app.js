@@ -28615,6 +28615,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
     },
     decrement: function decrement() {
       return this.$store.commit('decrement');
+    },
+    logger: function logger(player) {
+      console.log(player);
     }
   }
 });
@@ -42178,6 +42181,7 @@ var render = function() {
                         on: {
                           click: function($event) {
                             _vm.increment()
+                            _vm.logger(player)
                           }
                         }
                       },
