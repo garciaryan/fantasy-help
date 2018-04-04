@@ -4,7 +4,6 @@
                 :sort="sort"
                 :currentSort="currentSort"
                 :active="active"
-                :added="added"
                 :showPlus="showPlus"
                 :currentSortDir="currentSortDir" 
                 :sortedPlayers="sortedPlayers"
@@ -42,8 +41,7 @@ export default {
       search: '',
       currentSort: 'name',
       currentSortDir: 'desc',
-      active: false,
-      added: false
+      active: false
     }
   },
 

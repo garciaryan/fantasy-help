@@ -63,8 +63,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="player in sortedPlayers" :key="player.id" @mouseenter="showPlus(player)" @mouseleave="showPlus(player)">
-            <td class="name" @click="increment(); logger(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
+          <tr v-for="player in sortedPlayers" :key="player.id + '-sep'" @mouseenter="showPlus(player)" @mouseleave="showPlus(player)">
+            <td class="name" @click="increment(); selectPlayers(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
             <td>{{ player.team_abbreviation }}</td>
             <td>{{ player.fga }}</td>
             <td>{{ player.fgm }}</td>
@@ -98,9 +98,14 @@ export default {
     'currentSort',
     'currentSortDir',
     'active',
-    'showPlus',
-    'added'
+    'showPlus'
   ],
+
+  data(){
+    return {
+      selectedPlayersID: []
+    }
+  },
 
   components: {
     FloatThead
@@ -113,8 +118,18 @@ export default {
     decrement(){
       return this.$store.commit('decrement');
     },
-    logger(player){
-      console.log(player);      
+    selectPlayers(player){
+      if (this.selectedPlayersID.includes(player.player_name)){
+        // for(player.player_name in this.selectedPlayersID){
+        //   let playerIndex = this.selectedPlayersID.indexOf(player.player_name);
+        //   this.selectedPlayersID.splice(playerIndex);
+        //   console.log(this.selectedPlayersID);
+        // }
+      }
+      else {
+        this.selectedPlayersID.push(player.player_name);
+        console.log(this.selectedPlayersID);
+      }
     }
   }
 }

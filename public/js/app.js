@@ -28603,7 +28603,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir', 'active', 'showPlus', 'added'],
+  props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir', 'active', 'showPlus'],
+
+  data: function data() {
+    return {
+      selectedPlayersID: []
+    };
+  },
+
 
   components: {
     FloatThead: __WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a
@@ -28616,8 +28623,17 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
     decrement: function decrement() {
       return this.$store.commit('decrement');
     },
-    logger: function logger(player) {
-      console.log(player);
+    selectPlayers: function selectPlayers(player) {
+      if (this.selectedPlayersID.includes(player.player_name)) {
+        // for(player.player_name in this.selectedPlayersID){
+        //   let playerIndex = this.selectedPlayersID.indexOf(player.player_name);
+        //   this.selectedPlayersID.splice(playerIndex);
+        //   console.log(this.selectedPlayersID);
+        // }
+      } else {
+        this.selectedPlayersID.push(player.player_name);
+        console.log(this.selectedPlayersID);
+      }
     }
   }
 });
@@ -42163,7 +42179,7 @@ var render = function() {
                 return _c(
                   "tr",
                   {
-                    key: player.id,
+                    key: player.id + "-sep",
                     on: {
                       mouseenter: function($event) {
                         _vm.showPlus(player)
@@ -42181,7 +42197,7 @@ var render = function() {
                         on: {
                           click: function($event) {
                             _vm.increment()
-                            _vm.logger(player)
+                            _vm.selectPlayers(player)
                           }
                         }
                       },
@@ -42431,7 +42447,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -42458,8 +42473,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       search: '',
       currentSort: 'name',
       currentSortDir: 'desc',
-      active: false,
-      added: false
+      active: false
     };
   },
 
@@ -42522,7 +42536,6 @@ var render = function() {
           sort: _vm.sort,
           currentSort: _vm.currentSort,
           active: _vm.active,
-          added: _vm.added,
           showPlus: _vm.showPlus,
           currentSortDir: _vm.currentSortDir,
           sortedPlayers: _vm.sortedPlayers
