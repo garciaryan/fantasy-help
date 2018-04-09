@@ -9,6 +9,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use App\Player;
 use DB;
+use Alert;
 
 class PlayerController extends Controller
 {
@@ -101,6 +102,7 @@ class PlayerController extends Controller
             $player[ $rewriteKeys[$key] ] = $value;
           }
           Player::updateOrCreate(['player_id' => $player['player_id']] ,$player);
+          Alert::success('Players successfully updated!');
         }
       }
       catch (RequestException $e) {
