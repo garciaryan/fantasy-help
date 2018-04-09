@@ -1,0 +1,78 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class LastSeason extends Model
+{
+  protected $table = 'players';
+
+  protected $fillable = array(
+    'player_id',
+    'player_name',
+    'team_id',
+    'team_abbreviation',
+    'age',
+    'gp',
+    'w',
+    'l',
+    'w_pct',
+    'min',
+    'fgm',
+    'fga',
+    'fg_pct',
+    'fg3m',
+    'fg3a',
+    'fg3_pct',
+    'ftm',
+    'fta',
+    'ft_pct',
+    'oreb',
+    'dreb',
+    'reb',
+    'ast',
+    'tov',
+    'stl',
+    'blk',
+    'blka',
+    'pf',
+    'pfd',
+    'pts',
+    'plus_minus',
+    'nba_fantasy_pts',
+    'dd2',
+    'td3',
+    'gp_rank',
+    'w_rank',
+    'l_rank',
+    'w_pct_rank',
+    'min_rank',
+    'fgm_rank',
+    'fga_rank',
+    'fg_pct_rank',
+    'fg3m_rank',
+    'fg3a_rank',
+    'fg3_pct_rank',
+    'ftm_rank',
+    'fta_rank',
+    'ft_pct_rank',
+    'oreb_rank',
+    'dreb_rank',
+    'reb_rank',
+    'ast_rank',
+    'tov_rank',
+    'stl_rank',
+    'blk_rank',
+    'blka_rank',
+    'pf_rank',
+    'pfd_rank',
+    'pts_rank',
+    'plus_minus_rank',
+    'nba_fantasy_pts_rank',
+    'dd2_rank',
+    'td3_rank',
+    'cfid',
+    'cfparams'
+  );   
+}

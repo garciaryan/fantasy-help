@@ -28599,6 +28599,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -41465,6 +41470,67 @@ var render = function() {
                   {
                     on: {
                       click: function($event) {
+                        _vm.sort("nba_fantasy_pts")
+                      }
+                    }
+                  },
+                  [
+                    _vm._v("FPT\n            "),
+                    _c("span", [
+                      _vm.currentSortDir === "desc" &&
+                      _vm.currentSort === "nba_fantasy_pts"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow team-col",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm.currentSortDir === "asc" &&
+                      _vm.currentSort === "nba_fantasy_pts"
+                        ? _c(
+                            "svg",
+                            {
+                              staticClass: "column-arrow team-col",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                }
+                              })
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  {
+                    on: {
+                      click: function($event) {
                         _vm.sort("fga")
                       }
                     }
@@ -42232,6 +42298,8 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(player.team_abbreviation))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(player.nba_fantasy_pts))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(player.fga))]),
                     _vm._v(" "),

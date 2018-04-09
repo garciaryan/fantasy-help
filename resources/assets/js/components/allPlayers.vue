@@ -12,6 +12,10 @@
               <span><svg v-if="currentSortDir === 'desc' && currentSort === 'team_abbreviation'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort === 'team_abbreviation'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
             </th>
+            <th @click="sort('nba_fantasy_pts')">FPT
+              <span><svg v-if="currentSortDir === 'desc' && currentSort === 'nba_fantasy_pts'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
+              <span><svg v-if="currentSortDir === 'asc' && currentSort === 'nba_fantasy_pts'" class="column-arrow team-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
+            </th>
             <th @click="sort('fga')">FGA
               <span><svg v-if="currentSortDir === 'desc' && currentSort ==='fga'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></span>
               <span><svg v-if="currentSortDir === 'asc' && currentSort ==='fga'" class="column-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
@@ -66,6 +70,7 @@
           <tr v-for="player in sortedPlayers" :key="player.id + '-sep'" @mouseenter="showPlus(player)" @mouseleave="showPlus(player)">
             <td class="name" @click="increment(); selectPlayers(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
             <td>{{ player.team_abbreviation }}</td>
+            <td>{{ player.nba_fantasy_pts }}</td>
             <td>{{ player.fga }}</td>
             <td>{{ player.fgm }}</td>
             <td>{{ player.fg_pct }}</td>
