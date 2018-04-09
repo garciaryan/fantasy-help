@@ -10166,11 +10166,13 @@ main {
 }
 
 .first-col {
-  height: 16px;
+  height: 12px;
 }
 
 .team-col {
   float: right;
+  position: relative;
+  top: 5px;
 }
 
 .players-header > tr > th {

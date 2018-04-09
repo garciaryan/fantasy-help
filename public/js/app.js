@@ -41487,7 +41487,7 @@ var render = function() {
                         ? _c(
                             "svg",
                             {
-                              staticClass: "column-arrow team-col",
+                              staticClass: "column-arrow",
                               attrs: {
                                 xmlns: "http://www.w3.org/2000/svg",
                                 viewBox: "0 0 20 20"
@@ -41511,7 +41511,7 @@ var render = function() {
                         ? _c(
                             "svg",
                             {
-                              staticClass: "column-arrow team-col",
+                              staticClass: "column-arrow",
                               attrs: {
                                 xmlns: "http://www.w3.org/2000/svg",
                                 viewBox: "0 0 20 20"
