@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/update-players', 'PlayerController@store');
 Route::get('/players', 'PlayerController@show');
+Route::get('/players-remove', 'PlayerController@destroy');
+
+Route::get('/last-season-remove', 'LastSeasonController@destroy');
+Route::get('/last-season', 'LastSeasonController@store');

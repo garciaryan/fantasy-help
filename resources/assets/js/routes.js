@@ -7,6 +7,7 @@ import search from './components/search.vue';
 let routes = [
   {path: '/players', name: 'players', component: search},
   {path: '/compare', name: 'compare', component: newPlayer},
+  {path: '/last-season', name: 'last-season', component: search},
   {path: '/', name: 'home', component: home},
 
   //catch stray routes

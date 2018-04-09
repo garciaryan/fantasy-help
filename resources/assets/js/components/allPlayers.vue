@@ -97,6 +97,10 @@ import Vue from 'vue';
 Vue.use(FloatThead);
 
 export default {
+  created(){
+    axios.get('/api/update-players');
+  },
+
   props: [
     'sortedPlayers',
     'sort',

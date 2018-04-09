@@ -47,10 +47,9 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
+          <router-link to="/last-season" class="nav-link">
             Last season
-          </a>
+          </router-link>
         </li>
         <li class="nav-item nav-link">
           <h6 class="sidebar-heading mt-4 mb-1 text-muted">

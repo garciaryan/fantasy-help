@@ -28493,7 +28493,7 @@ module.exports = function spread(callback) {
 
 
 
-var routes = [{ path: '/players', name: 'players', component: __WEBPACK_IMPORTED_MODULE_4__components_search_vue___default.a }, { path: '/compare', name: 'compare', component: __WEBPACK_IMPORTED_MODULE_2__components_newPlayer_vue___default.a }, { path: '/', name: 'home', component: __WEBPACK_IMPORTED_MODULE_3__components_home_vue___default.a },
+var routes = [{ path: '/players', name: 'players', component: __WEBPACK_IMPORTED_MODULE_4__components_search_vue___default.a }, { path: '/compare', name: 'compare', component: __WEBPACK_IMPORTED_MODULE_2__components_newPlayer_vue___default.a }, { path: '/last-season', name: 'last-season', component: __WEBPACK_IMPORTED_MODULE_4__components_search_vue___default.a }, { path: '/', name: 'home', component: __WEBPACK_IMPORTED_MODULE_3__components_home_vue___default.a },
 
 //catch stray routes
 { path: '*', redirect: '/' }];
@@ -28611,6 +28611,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_floatthead___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  created: function created() {
+    axios.get('/api/update-players');
+  },
+
+
   props: ['sortedPlayers', 'sort', 'currentSort', 'currentSortDir', 'active', 'showPlus'],
 
   data: function data() {
@@ -42522,10 +42527,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {
-    var self = this;
-    axios.get('/api/update-players');
-  },
   mounted: function mounted() {
     var self = this;
     axios.get('/api/players').then(function (response) {
@@ -67366,7 +67367,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
@@ -67463,9 +67463,20 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _vm._m(3),
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "nav-link", attrs: { to: "/last-season" } },
+                [_vm._v("\n          Last season\n        ")]
+              )
+            ],
+            1
+          ),
           _vm._v(" "),
-          _vm._m(4)
+          _vm._m(3)
         ])
       ])
     ]
@@ -67529,17 +67540,6 @@ var staticRenderFns = [
         )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _c("span", { attrs: { "data-feather": "file-text" } }),
-        _vm._v("\n          Last season\n        ")
-      ])
-    ])
   },
   function() {
     var _vm = this

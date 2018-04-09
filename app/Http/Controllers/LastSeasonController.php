@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 use App\LastSeason;
+use DB;
 
 class LastSeasonController extends Controller
 {
@@ -12,7 +16,7 @@ class LastSeasonController extends Controller
     try {
 
       $client = new Client();
-      $season = '2017-18';
+      $season = '2016-17';
       $seasonType = 'Regular Season';
 
       $res = $client->get('http://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=' . $season . '&SeasonSegment=&SeasonType=' . $seasonType . '&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=', ['headers' => [
@@ -110,5 +114,11 @@ class LastSeasonController extends Controller
   {
     $players = LastSeason::all();
     return $players;
+  }
+
+  public function destroy()
+  {
+    $lastSeason = DB::table('last_season')->delete();
+      return $lastSeason;
   }
 }
