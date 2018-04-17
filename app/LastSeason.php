@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LastSeason extends Model
 {
-  protected $table = 'players';
+  protected $table = 'last_season';
 
   protected $fillable = array(
     'player_id',
