@@ -29,7 +29,7 @@ export default {
       }).catch(error => console.log(error));
   },
 
-  data: function() {
+  data() {
     return {
       players: [],
       filteredPlayers:[],
@@ -52,21 +52,21 @@ export default {
       })
     },
 
-    sort: function(s) {
+    sort(s) {
       if(s === this.currentSort){
         this.currentSortDir = this.currentSortDir ==='desc' ? 'asc' : 'desc';
       }
       this.currentSort = s;
     },
 
-    showPlus: function(player){
+    showPlus(player){
       this.active = player.id;
     }
 
   },
 
   computed: {
-    sortedPlayers: function(){
+    sortedPlayers(){
       return this.filteredPlayers.sort((a,b) => {
         let modifier = 1;
         if (this.currentSortDir === 'asc') modifier = -1;

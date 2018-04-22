@@ -28647,6 +28647,13 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
         this.selectedPlayersID.push(player.player_name);
         console.log(this.selectedPlayersID);
       }
+    },
+    compareToggle: function compareToggle(player) {
+      if (this.selectedPlayersID.includes(player.player_name)) {
+        this.decrement();
+      } else {
+        this.increment();
+      }
     }
   }
 });
@@ -42270,7 +42277,7 @@ var render = function() {
                         staticClass: "name",
                         on: {
                           click: function($event) {
-                            _vm.increment()
+                            _vm.compareToggle(player)
                             _vm.selectPlayers(player)
                           }
                         }
@@ -42536,8 +42543,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return console.log(error);
     });
   },
-
-
   data: function data() {
     return {
       players: [],
@@ -42548,6 +42553,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       active: false
     };
   },
+
 
   components: {
     allPlayers: __WEBPACK_IMPORTED_MODULE_0__allPlayers_vue___default.a
@@ -42560,19 +42566,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return player.player_name.toLowerCase().includes(self.search.toLowerCase());
       });
     },
-
-
     sort: function sort(s) {
       if (s === this.currentSort) {
         this.currentSortDir = this.currentSortDir === 'desc' ? 'asc' : 'desc';
       }
       this.currentSort = s;
     },
-
     showPlus: function showPlus(player) {
       this.active = player.id;
     }
-
   },
 
   computed: {
