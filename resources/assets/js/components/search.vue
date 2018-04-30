@@ -10,7 +10,10 @@
                 >
     </all-players>
     <div class="col-md-12 flx-end">
-      <input type="text" v-on:keyup="searchPlayers()" v-model="search" placeholder="Search players" class="player-search">
+      <md-field class="player-search">
+        <label>Search players...</label>
+        <md-input type="text" v-on:keyup="searchPlayers()" v-model="search" ></md-input>
+      </md-field>
     </div>
   </div>
 </template>

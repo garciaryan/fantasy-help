@@ -13,6 +13,11 @@
   margin-top: 7%;
 }
 //main
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
 html, body {
   background-color: #fff;
   color: $gray;
@@ -108,7 +113,7 @@ main {
 }
 
 .sidenav {
-  border-right: solid 1px #000;
+  border-right: solid 1px $black;
   height: 100%;
   flex: 0 0 200px;
   z-index: 1;
@@ -171,8 +176,9 @@ main {
   z-index: 10;
   left: 16%;
   margin-top: 5%;
-  border-bottom: 1px solid #000;
-  font-family: $main-font;
+  border-bottom: 1px solid $black;
+  font-size: 15px;
+  font-family: $main-font !important;
 }
 
 #floatTheadTable {
@@ -181,6 +187,11 @@ main {
 
 .players-header {
   background-color: #DBDBF0;
+}
+
+.player-search {
+  width: 50% !important;
+  border-bottom: 1px solid $black;
 }
 
 .name {

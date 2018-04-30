@@ -10,6 +10,8 @@
  import router from './routes.js';
  import store from './store.js';
  import VueSweetalert2 from 'vue-sweetalert2';
+ import VueMaterial from 'vue-material';
+ import 'vue-material/dist/vue-material.min.css';
 
 require('./bootstrap');
 
@@ -23,6 +25,7 @@ window.axios = axios;
  */
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2);
+Vue.use(VueMaterial);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('new-player', require('./components/newPlayer.vue'));
