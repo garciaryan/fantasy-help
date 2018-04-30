@@ -28637,15 +28637,17 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
       return this.$store.commit('decrement');
     },
     selectPlayers: function selectPlayers(player) {
-      if (this.selectedPlayersID.includes(player.player_name)) {
-        // for(player.player_name in this.selectedPlayersID){
-        //   let playerIndex = this.selectedPlayersID.indexOf(player.player_name);
-        //   this.selectedPlayersID.splice(playerIndex);
-        //   console.log(this.selectedPlayersID);
-        // }
-      } else {
+      if (this.selectedPlayersID.indexOf(player.player_name) === -1) {
         this.selectedPlayersID.push(player.player_name);
         console.log(this.selectedPlayersID);
+        console.log(player.player_name + ' added.');
+        return this.selectedPlayersID;
+      } else if (this.selectedPlayersID.indexOf(player.player_name) > -1) {
+        var index = this.selectedPlayersID.indexOf(player.player_name);
+        var removed = this.selectedPlayersID.splice(index, 1)[0];
+        console.log(this.selectedPlayersID);
+        console.log(removed + ' removed.');
+        return this.selectedPlayersID;
       }
     },
     compareToggle: function compareToggle(player) {
