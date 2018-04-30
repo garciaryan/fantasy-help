@@ -98,7 +98,11 @@ Vue.use(FloatThead);
 
 export default {
   created(){
-    axios.get('/api/update-players');
+    this.$store.commit('loading');
+    axios.get('/api/update-players')
+    .then(res => {
+      this.$store.commit('loaded');
+    }).catch(err => {console.log(err);})
   },
 
   props: [
@@ -112,7 +116,7 @@ export default {
 
   data(){
     return {
-      selectedPlayersID: []
+      selectedPlayersID: [],
     }
   },
 

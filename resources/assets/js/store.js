@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    loading: true
   },
   mutations: {
     increment(state){
@@ -13,6 +14,12 @@ const store = new Vuex.Store({
     },
     decrement(state){
       state.count--;
+    },
+    loaded(state){
+      state.loading = false;
+    },
+    loading(state){
+      state.loading = true;
     }
   }
 });

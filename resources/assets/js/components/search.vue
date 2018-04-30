@@ -9,6 +9,7 @@
                 :sortedPlayers="sortedPlayers"
                 >
     </all-players>
+    <md-progress-spinner v-if="checkLoading()" md-mode="indeterminate"></md-progress-spinner>
     <div class="col-md-12 flx-end">
       <md-field class="player-search">
         <label>Search players...</label>
@@ -39,7 +40,7 @@ export default {
       search: '',
       currentSort: 'name',
       currentSortDir: 'desc',
-      active: false
+      active: false,
     }
   },
 
@@ -64,6 +65,10 @@ export default {
 
     showPlus(player){
       this.active = player.id;
+    },
+
+    checkLoading(){
+      return this.$store.state.loading;
     }
 
   },

@@ -29060,7 +29060,14 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
-    axios.get('/api/update-players');
+    var _this = this;
+
+    this.$store.commit('loading');
+    axios.get('/api/update-players').then(function (res) {
+      _this.$store.commit('loaded');
+    }).catch(function (err) {
+      console.log(err);
+    });
   },
 
 
@@ -42926,7 +42933,7 @@ var render = function() {
           _c(
             "router-link",
             { staticClass: "nav-link", attrs: { to: "/compare" } },
-            [_c("h1", [_vm._v("Compare Players")])]
+            [_c("h1", [_vm._v("Compare")])]
           )
         ],
         1
@@ -42936,9 +42943,11 @@ var render = function() {
         "div",
         { staticClass: "col-md-6 text-center" },
         [
-          _c("router-link", { staticClass: "nav-link", attrs: { to: "/" } }, [
-            _c("h1", [_vm._v("View Trends")])
-          ])
+          _c(
+            "router-link",
+            { staticClass: "nav-link", attrs: { to: "/players" } },
+            [_c("h1", [_vm._v("All Players")])]
+          )
         ],
         1
       )
@@ -42963,6 +42972,7 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allPlayers_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__allPlayers_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__allPlayers_vue__);
+//
 //
 //
 //
@@ -43027,6 +43037,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     showPlus: function showPlus(player) {
       this.active = player.id;
+    },
+    checkLoading: function checkLoading() {
+      return this.$store.state.loading;
     }
   },
 
@@ -43068,6 +43081,10 @@ var render = function() {
           sortedPlayers: _vm.sortedPlayers
         }
       }),
+      _vm._v(" "),
+      _vm.checkLoading()
+        ? _c("md-progress-spinner", { attrs: { "md-mode": "indeterminate" } })
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
@@ -43127,7 +43144,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */]);
 
 var store = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */].Store({
   state: {
-    count: 0
+    count: 0,
+    loading: true
   },
   mutations: {
     increment: function increment(state) {
@@ -43135,6 +43153,12 @@ var store = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */].Store({
     },
     decrement: function decrement(state) {
       state.count--;
+    },
+    loaded: function loaded(state) {
+      state.loading = false;
+    },
+    loading: function loading(state) {
+      state.loading = true;
     }
   }
 });
