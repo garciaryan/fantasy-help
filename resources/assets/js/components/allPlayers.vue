@@ -143,7 +143,7 @@ export default {
       }
     },
     compareToggle(player){
-      if (this.selectedPlayersID.includes(player.player_name)){
+      if (this.selectedPlayersID.includes(player)){
         this.decrement();
       } else {
         this.increment();

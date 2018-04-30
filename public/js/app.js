@@ -29099,7 +29099,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
       }
     },
     compareToggle: function compareToggle(player) {
-      if (this.selectedPlayersID.includes(player.player_name)) {
+      if (this.selectedPlayersID.includes(player)) {
         this.decrement();
       } else {
         this.increment();
