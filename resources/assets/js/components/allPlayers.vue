@@ -68,7 +68,7 @@
         </thead>
         <tbody>
           <tr v-for="player in sortedPlayers" :key="player.id + '-sep'" @mouseenter="showPlus(player)" @mouseleave="showPlus(player)">
-            <td class="name" @click="compareToggle(player); selectPlayers(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
+            <td class="name" @click="selectPlayers(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
             <td>{{ player.team_abbreviation }}</td>
             <td>{{ player.nba_fantasy_pts }}</td>
             <td>{{ player.fga }}</td>
@@ -134,6 +134,7 @@ export default {
     selectPlayers(player){
       if (this.selectedPlayersID.indexOf(player) === -1){
         this.selectedPlayersID.push(player);
+        this.increment();
         console.log(this.selectedPlayersID);
         console.log(`${player.player_name} added.`);
         return this.selectedPlayersID;
@@ -141,17 +142,11 @@ export default {
       else if (this.selectedPlayersID.indexOf(player) > -1) {
         let index = this.selectedPlayersID.indexOf(player);
         let removed = this.selectedPlayersID.splice(index, 1)[0];
+        this.decrement();
         console.log(this.selectedPlayersID);
         console.log(`${removed.player_name} removed.`);
         return this.selectedPlayersID;
       }
-    },
-    compareToggle(player){
-      if (this.selectedPlayersID.includes(player)){
-        this.decrement();
-      } else {
-        this.increment();
-      } 
     }
   }
 }

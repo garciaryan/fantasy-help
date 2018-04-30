@@ -37,10 +37,5 @@ Vue.component('search', require('./components/search.vue'));
 const app = new Vue({
   el: '#app',
   router,
-  store,
-  methods: {
-    increment(){
-      store.commit('increment');
-    }
-  }
+  store
 });

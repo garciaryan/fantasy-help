@@ -28029,12 +28029,7 @@ Vue.component('search', __webpack_require__(16));
 var app = new Vue({
   el: '#app',
   router: __WEBPACK_IMPORTED_MODULE_2__routes_js__["a" /* default */],
-  store: __WEBPACK_IMPORTED_MODULE_3__store_js__["a" /* default */],
-  methods: {
-    increment: function increment() {
-      __WEBPACK_IMPORTED_MODULE_3__store_js__["a" /* default */].commit('increment');
-    }
-  }
+  store: __WEBPACK_IMPORTED_MODULE_3__store_js__["a" /* default */]
 });
 
 /***/ }),
@@ -29094,22 +29089,17 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
     selectPlayers: function selectPlayers(player) {
       if (this.selectedPlayersID.indexOf(player) === -1) {
         this.selectedPlayersID.push(player);
+        this.increment();
         console.log(this.selectedPlayersID);
         console.log(player.player_name + ' added.');
         return this.selectedPlayersID;
       } else if (this.selectedPlayersID.indexOf(player) > -1) {
         var index = this.selectedPlayersID.indexOf(player);
         var removed = this.selectedPlayersID.splice(index, 1)[0];
+        this.decrement();
         console.log(this.selectedPlayersID);
         console.log(removed.player_name + ' removed.');
         return this.selectedPlayersID;
-      }
-    },
-    compareToggle: function compareToggle(player) {
-      if (this.selectedPlayersID.includes(player)) {
-        this.decrement();
-      } else {
-        this.increment();
       }
     }
   }
@@ -42734,7 +42724,6 @@ var render = function() {
                         staticClass: "name",
                         on: {
                           click: function($event) {
-                            _vm.compareToggle(player)
                             _vm.selectPlayers(player)
                           }
                         }
