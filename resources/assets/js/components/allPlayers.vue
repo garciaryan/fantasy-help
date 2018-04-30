@@ -128,17 +128,17 @@ export default {
       return this.$store.commit('decrement');
     },
     selectPlayers(player){
-      if (this.selectedPlayersID.indexOf(player.player_name) === -1){
-        this.selectedPlayersID.push(player.player_name);
+      if (this.selectedPlayersID.indexOf(player) === -1){
+        this.selectedPlayersID.push(player);
         console.log(this.selectedPlayersID);
         console.log(`${player.player_name} added.`);
         return this.selectedPlayersID;
       }
-      else if (this.selectedPlayersID.indexOf(player.player_name) > -1) {
-        let index = this.selectedPlayersID.indexOf(player.player_name);
+      else if (this.selectedPlayersID.indexOf(player) > -1) {
+        let index = this.selectedPlayersID.indexOf(player);
         let removed = this.selectedPlayersID.splice(index, 1)[0];
         console.log(this.selectedPlayersID);
-        console.log(`${removed} removed.`);
+        console.log(`${removed.player_name} removed.`);
         return this.selectedPlayersID;
       }
     },

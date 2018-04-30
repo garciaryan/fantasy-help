@@ -28637,16 +28637,16 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
       return this.$store.commit('decrement');
     },
     selectPlayers: function selectPlayers(player) {
-      if (this.selectedPlayersID.indexOf(player.player_name) === -1) {
-        this.selectedPlayersID.push(player.player_name);
+      if (this.selectedPlayersID.indexOf(player) === -1) {
+        this.selectedPlayersID.push(player);
         console.log(this.selectedPlayersID);
         console.log(player.player_name + ' added.');
         return this.selectedPlayersID;
-      } else if (this.selectedPlayersID.indexOf(player.player_name) > -1) {
-        var index = this.selectedPlayersID.indexOf(player.player_name);
+      } else if (this.selectedPlayersID.indexOf(player) > -1) {
+        var index = this.selectedPlayersID.indexOf(player);
         var removed = this.selectedPlayersID.splice(index, 1)[0];
         console.log(this.selectedPlayersID);
-        console.log(removed + ' removed.');
+        console.log(removed.player_name + ' removed.');
         return this.selectedPlayersID;
       }
     },
