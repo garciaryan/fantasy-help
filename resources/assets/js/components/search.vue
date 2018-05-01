@@ -9,7 +9,7 @@
                 :sortedPlayers="sortedPlayers"
                 >
     </all-players>
-    <md-progress-spinner v-if="checkLoading()" md-mode="indeterminate"></md-progress-spinner>
+    <md-progress-spinner md-mode="indeterminate"></md-progress-spinner>
     <div class="col-md-12 flx-end">
       <md-field class="player-search">
         <label>Search players...</label>

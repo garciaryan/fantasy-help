@@ -68,7 +68,7 @@
         </thead>
         <tbody>
           <tr v-for="player in sortedPlayers" :key="player.id + '-sep'" @mouseenter="showPlus(player)" @mouseleave="showPlus(player)">
-            <td class="name" @click="selectPlayers(player);">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
+            <td class="name" @click="selectPlayers(player); showSnackbar = true">{{ player.player_name }} <span v-if="active == player.id"><svg class="first-col" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg></span></td>
             <td>{{ player.team_abbreviation }}</td>
             <td>{{ player.nba_fantasy_pts }}</td>
             <td>{{ player.fga }}</td>
@@ -85,6 +85,9 @@
             <td>{{ player.tov }}</td>
           </tr>
         </tbody>
+        <md-snackbar :md-position="position" :md-active.sync="showSnackbar">
+          <span v-for="player in selectedPlayersID" :key="player.id">{{ player.player_name }} added.</span>
+        </md-snackbar>
       </float-thead-table>
     </div>
   </div>
@@ -117,6 +120,8 @@ export default {
   data(){
     return {
       selectedPlayersID: [],
+      showSnackbar: false,
+      position: 'center'
     }
   },
 

@@ -29047,6 +29047,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -29070,7 +29073,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 
   data: function data() {
     return {
-      selectedPlayersID: []
+      selectedPlayersID: [],
+      showSnackbar: false,
+      position: 'center'
     };
   },
 
@@ -42725,6 +42730,7 @@ var render = function() {
                         on: {
                           click: function($event) {
                             _vm.selectPlayers(player)
+                            _vm.showSnackbar = true
                           }
                         }
                       },
@@ -42785,8 +42791,29 @@ var render = function() {
                   ]
                 )
               })
+            ),
+            _vm._v(" "),
+            _c(
+              "md-snackbar",
+              {
+                attrs: {
+                  "md-position": _vm.position,
+                  "md-active": _vm.showSnackbar
+                },
+                on: {
+                  "update:mdActive": function($event) {
+                    _vm.showSnackbar = $event
+                  }
+                }
+              },
+              _vm._l(_vm.selectedPlayersID, function(player) {
+                return _c("span", { key: player.id }, [
+                  _vm._v(_vm._s(player.player_name) + " added.")
+                ])
+              })
             )
-          ]
+          ],
+          1
         )
       ],
       1
@@ -43071,9 +43098,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _vm.checkLoading()
-        ? _c("md-progress-spinner", { attrs: { "md-mode": "indeterminate" } })
-        : _vm._e(),
+      _c("md-progress-spinner", { attrs: { "md-mode": "indeterminate" } }),
       _vm._v(" "),
       _c(
         "div",
