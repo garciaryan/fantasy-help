@@ -9,7 +9,8 @@
                 :sortedPlayers="sortedPlayers"
                 >
     </all-players>
-    <md-progress-spinner md-mode="indeterminate"></md-progress-spinner>
+    <!-- Find a new spinner, md isnt working -->
+    <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..." v-if="checkLoading()"></vue-simple-spinner>
     <div class="col-md-12 flx-end">
       <md-field class="player-search">
         <label>Search players...</label>
@@ -21,8 +22,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import allPlayers from './allPlayers.vue';
 import selectedPlayers from './selectedPlayers.vue';
+import Spinner from 'vue-simple-spinner';
+
 
 export default {
 
@@ -48,7 +52,8 @@ export default {
 
   components: {
     allPlayers,
-    selectedPlayers
+    selectedPlayers,
+    Spinner
   },
 
   methods:{

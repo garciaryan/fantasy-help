@@ -10102,7 +10102,7 @@ main {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 11;
 }
 
 .sidenav {
@@ -10230,11 +10230,6 @@ main {
   background-color: #f1ecec;
 }
 
-.md-progress-spinner {
-  z-index: 10;
-  margin: 25% auto;
-}
-
 .md-list-item-content > .md-icon:first-child {
   margin-right: 5px !important;
   color: #e82222;
@@ -10251,5 +10246,25 @@ main {
   -webkit-box-direction: normal !important;
       -ms-flex-flow: row !important;
           flex-flow: row !important;
+}
+
+.z-top {
+  z-index: 10;
+}
+
+.spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 77%;
+  background-color: rgba(178, 176, 176, 0.7);
 }
 

@@ -12,6 +12,7 @@
  import VueSweetalert2 from 'vue-sweetalert2';
  import VueMaterial from 'vue-material';
  import 'vue-material/dist/vue-material.min.css';
+ import 'vue-simple-spinner/dist/vue-simple-spinner.min.js';
 
 require('./bootstrap');
 
