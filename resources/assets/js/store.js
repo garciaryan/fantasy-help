@@ -6,7 +6,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     count: 0,
-    loading: true
+    loading: true,
+    selectedPlayersID: []
   },
   mutations: {
     increment(state){

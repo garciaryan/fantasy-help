@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <md-list>
+      <md-list-item v-for="player in selectedPlayersID" :key="player.id">
+        <md-icon>remove_circle</md-icon>
+        {{ player.player_name }}
+      </md-list-item>
+      <!-- <md-list-item>
+        <md-icon>remove_circle</md-icon>
+        <span>Hey there</span>
+      </md-list-item> -->
+    </md-list>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      selectedPlayersID: this.$store.state.selectedPlayersID
+    }
+  },
+}
+</script>
+

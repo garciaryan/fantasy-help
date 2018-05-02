@@ -85,9 +85,6 @@
             <td>{{ player.tov }}</td>
           </tr>
         </tbody>
-        <md-snackbar :md-position="position" :md-active.sync="showSnackbar">
-          <span v-for="player in selectedPlayersID" :key="player.id">{{ player.player_name }} added.</span>
-        </md-snackbar>
       </float-thead-table>
     </div>
   </div>
@@ -119,7 +116,6 @@ export default {
 
   data(){
     return {
-      selectedPlayersID: [],
       showSnackbar: false,
       position: 'center'
     }
@@ -137,20 +133,20 @@ export default {
       return this.$store.commit('decrement');
     },
     selectPlayers(player){
-      if (this.selectedPlayersID.indexOf(player) === -1){
-        this.selectedPlayersID.push(player);
+      if (this.$store.state.selectedPlayersID.indexOf(player) === -1){
+        this.$store.state.selectedPlayersID.push(player);
         this.increment();
-        console.log(this.selectedPlayersID);
+        console.log(this.$store.state.selectedPlayersID);
         console.log(`${player.player_name} added.`);
-        return this.selectedPlayersID;
+        return this.$store.state.selectedPlayersID;
       }
-      else if (this.selectedPlayersID.indexOf(player) > -1) {
-        let index = this.selectedPlayersID.indexOf(player);
-        let removed = this.selectedPlayersID.splice(index, 1)[0];
+      else if (this.$store.state.selectedPlayersID.indexOf(player) > -1) {
+        let index = this.$store.state.selectedPlayersID.indexOf(player);
+        let removed = this.$store.state.selectedPlayersID.splice(index, 1)[0];
         this.decrement();
-        console.log(this.selectedPlayersID);
+        console.log(this.$store.state.selectedPlayersID);
         console.log(`${removed.player_name} removed.`);
-        return this.selectedPlayersID;
+        return this.$store.state.selectedPlayersID;
       }
     }
   }

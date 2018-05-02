@@ -15,12 +15,14 @@
         <label>Search players...</label>
         <md-input type="text" v-on:keyup="searchPlayers()" v-model="search" ></md-input>
       </md-field>
+      <selected-players></selected-players>
     </div>
   </div>
 </template>
 
 <script>
 import allPlayers from './allPlayers.vue';
+import selectedPlayers from './selectedPlayers.vue';
 
 export default {
 
@@ -45,7 +47,8 @@ export default {
   },
 
   components: {
-    allPlayers
+    allPlayers,
+    selectedPlayers
   },
 
   methods:{
