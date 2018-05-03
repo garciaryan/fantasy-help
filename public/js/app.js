@@ -43134,12 +43134,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       selectedPlayersID: this.$store.state.selectedPlayersID
     };
+  },
+
+
+  methods: {
+    deselectPlayer: function deselectPlayer(player) {
+      var index = this.$store.state.selectedPlayersID.indexOf(player);
+      var removed = this.$store.state.selectedPlayersID.splice(index, 1)[0];
+      this.decrement();
+      console.log(this.$store.state.selectedPlayersID);
+      console.log(removed.player_name + ' removed.');
+      return this.$store.state.selectedPlayersID;
+    },
+    decrement: function decrement() {
+      return this.$store.commit('decrement');
+    }
   }
 });
 
@@ -43153,30 +43171,28 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c(
-        "md-list",
+    _vm._l(_vm.selectedPlayersID, function(player) {
+      return _c(
+        "div",
+        { key: player.id },
         [
           _c(
-            "transition-group",
-            { attrs: { name: "fade" } },
-            _vm._l(_vm.selectedPlayersID, function(player) {
-              return _c(
-                "md-list-item",
-                { key: player.id },
-                [
-                  _c("md-icon", [_vm._v("remove_circle")]),
-                  _vm._v("\n        " + _vm._s(player.player_name) + "\n      ")
-                ],
-                1
-              )
-            })
+            "md-chip",
+            {
+              staticClass: "chip-theme",
+              attrs: { "md-deletable": "" },
+              on: {
+                click: function($event) {
+                  _vm.deselectPlayer(player)
+                }
+              }
+            },
+            [_vm._v(_vm._s(player.player_name))]
           )
         ],
         1
       )
-    ],
-    1
+    })
   )
 }
 var staticRenderFns = []
