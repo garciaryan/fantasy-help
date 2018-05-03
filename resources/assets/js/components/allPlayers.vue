@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-10 table-container">
+  <div class="col-md-10 col-xs-12 table-container">
     <div class="table-hover table-condensed table-responsive">
       <float-thead-table position="sticky" class="table" style="table-layout: fixed;">
         <thead class="players-header">

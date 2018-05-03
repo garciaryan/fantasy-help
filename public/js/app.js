@@ -41841,7 +41841,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-10 table-container" }, [
+  return _c("div", { staticClass: "col-md-10 col-xs-12 table-container" }, [
     _c(
       "div",
       { staticClass: "table-hover table-condensed table-responsive" },
