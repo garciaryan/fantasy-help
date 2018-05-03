@@ -10,7 +10,7 @@
                 >
     </all-players>
     <!-- Find a new spinner, md isnt working -->
-    <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..." v-if="checkLoading()"></vue-simple-spinner>
+    <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..."></vue-simple-spinner>
     <div class="col-md-12 flx-end">
       <md-field class="player-search">
         <label>Search players...</label>
