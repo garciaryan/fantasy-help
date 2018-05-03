@@ -43897,14 +43897,16 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("vue-simple-spinner", {
-        staticClass: "z-top spinner",
-        attrs: {
-          size: "huge",
-          "text-fg-color": "#FFFFFF",
-          message: "Updating player stats..."
-        }
-      }),
+      _vm.checkLoading()
+        ? _c("vue-simple-spinner", {
+            staticClass: "z-top spinner",
+            attrs: {
+              size: "huge",
+              "text-fg-color": "#FFFFFF",
+              message: "Updating player stats..."
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
