@@ -43041,6 +43041,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -43881,69 +43885,78 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row row-full-width" },
-    [
-      _c("all-players", {
-        attrs: {
-          filteredPlayers: _vm.filteredPlayers,
-          sort: _vm.sort,
-          currentSort: _vm.currentSort,
-          active: _vm.active,
-          showPlus: _vm.showPlus,
-          currentSortDir: _vm.currentSortDir,
-          sortedPlayers: _vm.sortedPlayers
-        }
-      }),
-      _vm._v(" "),
-      _vm.checkLoading()
-        ? _c("vue-simple-spinner", {
-            staticClass: "z-top spinner",
-            attrs: {
-              size: "huge",
-              "text-fg-color": "#FFFFFF",
-              message: "Updating player stats..."
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-12 flx-end" },
-        [
-          _c(
-            "md-field",
-            { staticClass: "player-search" },
-            [
-              _c("label", [_vm._v("Search players...")]),
-              _vm._v(" "),
-              _c("md-input", {
-                attrs: { type: "text" },
-                on: {
-                  keyup: function($event) {
-                    _vm.searchPlayers()
-                  }
-                },
-                model: {
-                  value: _vm.search,
-                  callback: function($$v) {
-                    _vm.search = $$v
+  return _c("div", { staticClass: "row-full-width" }, [
+    _c(
+      "div",
+      { staticClass: "row row-full-width all-players-container" },
+      [
+        _c("all-players", {
+          attrs: {
+            filteredPlayers: _vm.filteredPlayers,
+            sort: _vm.sort,
+            currentSort: _vm.currentSort,
+            active: _vm.active,
+            showPlus: _vm.showPlus,
+            currentSortDir: _vm.currentSortDir,
+            sortedPlayers: _vm.sortedPlayers
+          }
+        }),
+        _vm._v(" "),
+        _vm.checkLoading()
+          ? _c("vue-simple-spinner", {
+              staticClass: "z-top spinner",
+              attrs: {
+                size: "huge",
+                "text-fg-color": "#FFFFFF",
+                message: "Updating player stats..."
+              }
+            })
+          : _vm._e()
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row row-full-width search-container" },
+      [
+        _c(
+          "div",
+          { staticClass: "col-md-6 flx-end" },
+          [
+            _c(
+              "md-field",
+              { staticClass: "player-search" },
+              [
+                _c("label", [_vm._v("Search players...")]),
+                _vm._v(" "),
+                _c("md-input", {
+                  attrs: { type: "text" },
+                  on: {
+                    keyup: function($event) {
+                      _vm.searchPlayers()
+                    }
                   },
-                  expression: "search"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("selected-players")
-        ],
-        1
-      )
-    ],
-    1
-  )
+                  model: {
+                    value: _vm.search,
+                    callback: function($$v) {
+                      _vm.search = $$v
+                    },
+                    expression: "search"
+                  }
+                })
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("selected-players", { staticClass: "col-md-6" })
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

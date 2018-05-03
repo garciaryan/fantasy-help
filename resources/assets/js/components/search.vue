@@ -1,22 +1,26 @@
 <template>
-  <div class="row row-full-width">
-    <all-players :filteredPlayers="filteredPlayers"
-                :sort="sort"
-                :currentSort="currentSort"
-                :active="active"
-                :showPlus="showPlus"
-                :currentSortDir="currentSortDir" 
-                :sortedPlayers="sortedPlayers"
-                >
-    </all-players>
-    <!-- Find a new spinner, md isnt working -->
-    <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..." v-if="checkLoading()"></vue-simple-spinner>
-    <div class="col-md-12 flx-end">
-      <md-field class="player-search">
-        <label>Search players...</label>
-        <md-input type="text" v-on:keyup="searchPlayers()" v-model="search" ></md-input>
-      </md-field>
-      <selected-players></selected-players>
+  <div class="row-full-width">
+    <div class="row row-full-width all-players-container">
+      <all-players :filteredPlayers="filteredPlayers"
+                  :sort="sort"
+                  :currentSort="currentSort"
+                  :active="active"
+                  :showPlus="showPlus"
+                  :currentSortDir="currentSortDir" 
+                  :sortedPlayers="sortedPlayers"
+                  >
+      </all-players>
+      <!-- Find a new spinner, md isnt working -->
+      <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..." v-if="checkLoading()"></vue-simple-spinner>
+    </div>
+    <div class="row row-full-width search-container">
+      <div class="col-md-6 flx-end">
+        <md-field class="player-search">
+          <label>Search players...</label>
+          <md-input type="text" v-on:keyup="searchPlayers()" v-model="search" ></md-input>
+        </md-field>
+      </div>
+      <selected-players class="col-md-6"></selected-players>
     </div>
   </div>
 </template>
