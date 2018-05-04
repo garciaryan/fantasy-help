@@ -43968,7 +43968,7 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("selected-players", { staticClass: "col-md-6" })
+        _c("selected-players", { staticClass: "col-md-6 flx-select" })
       ],
       1
     )

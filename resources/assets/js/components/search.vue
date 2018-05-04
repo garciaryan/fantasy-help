@@ -20,7 +20,7 @@
           <md-input type="text" v-on:keyup="searchPlayers()" v-model="search" ></md-input>
         </md-field>
       </div>
-      <selected-players class="col-md-6"></selected-players>
+      <selected-players class="col-md-6 flx-select"></selected-players>
     </div>
   </div>
 </template>

@@ -10158,6 +10158,14 @@ main,
   padding-right: 0;
 }
 
+.flx-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
 .all-players-container {
   height: 77%;
   margin: 0;
@@ -10258,7 +10266,7 @@ main,
 .chip-theme {
   background-color: #d83636;
   color: #fff;
-  margin-top: 5px;
+  margin: 5px;
 }
 
 .z-top {

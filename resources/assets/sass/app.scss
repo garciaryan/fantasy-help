@@ -139,6 +139,11 @@ main,
   padding-right: 0;
 }
 
+.flx-select {
+  display: flex;
+  flex-flow: wrap;
+}
+
 //All Players section
 .all-players-container {
   height: 77%;
@@ -225,7 +230,7 @@ main,
 .chip-theme {
   background-color: #d83636;
   color: #fff;
-  margin-top: 5px;
+  margin: 5px;
 }
 
 //simple spinner styles
