@@ -17,9 +17,10 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <!-- <a class="nav-link" href="#">
             Trends
-          </a>
+          </a> -->
+          <span class="nav-link">Trends(not working)</span>
         </li>
         <li class="nav-item">
           <router-link to="/players" class="nav-link">
@@ -37,13 +38,14 @@
       <ul class="nav flex-column mb-2">
         <li class="nav-item">
           <router-link to="/players" class="nav-link">
-            Current season
+            Current Season
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/last-season" class="nav-link">
-            Last season
-          </router-link>
+          <!-- <router-link to="/last-season" class="nav-link">
+            Last Season
+          </router-link> -->
+          <span class="nav-link">Last Season(not working)</span>
         </li>
         <li class="nav-item nav-link">
           <h6 class="sidebar-heading mt-4 mb-1 text-muted">
