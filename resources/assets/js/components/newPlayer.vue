@@ -1,27 +1,35 @@
 <template>
-  <div class="container-fluid flex-middle">
-    <div class="row">
-      <div class="col-md-6">
-        <button class="btn btn-primary" data-target="#add-player" id="add-player" v-on:click="show = !show">Add Player <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-      </div>
-      <transition name="slide">
-        <div class="col-md-6" v-if="show">new player</div>
-      </transition>
-    </div>
-    <div class="row">
-      <div class="col-md-6"></div>
-      <div class="col-md-6"></div>
-    </div>
+  <div class="col-md-12 flx-center">
+    <md-card v-for="player in selectedPlayersID" :key="player.id" md-with-hover>
+      <md-ripple>
+        <md-card-header>
+          <md-card-header-text>
+            <div class="md-title">{{ player.player_name }}</div>
+            <div class="md-subhead">{{ player.team_abbreviation }}</div>
+          </md-card-header-text>
+          <!-- <md-card-media>
+            <img src="" alt="">
+          </md-card-media> -->
+        </md-card-header>
+        <md-card-content>
+          <div>PTS: {{ player.pts }}</div>
+          <div>AST: {{ player.ast}}</div>
+          <div>REB: {{ player.reb }}</div>
+          <div>BLK: {{ player.blk }}</div>
+          <div>TOV: {{ player.tov }}</div>
+          <div>STL: {{ player.stl }}</div>
+          <div>Fantasy Points: {{ player.nba_fantasy_pts }}</div>
+        </md-card-content>
+      </md-ripple>
+    </md-card>
   </div>
 </template>
 
 <script>
 export default {
-
-  data: function() {
+  data() {
     return {
-      show: false,
-      players:[]
+      selectedPlayersID: this.$store.state.selectedPlayersID
     }
   }
 }

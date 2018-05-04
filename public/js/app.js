@@ -42877,13 +42877,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-
   data: function data() {
     return {
-      show: false,
-      players: []
+      selectedPlayersID: this.$store.state.selectedPlayersID
     };
   }
 });
@@ -42896,57 +42904,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid flex-middle" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c("div", { staticClass: "col-md-6" }, [
+  return _c(
+    "div",
+    { staticClass: "col-md-12 flx-center" },
+    _vm._l(_vm.selectedPlayersID, function(player) {
+      return _c(
+        "md-card",
+        { key: player.id, attrs: { "md-with-hover": "" } },
+        [
           _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { "data-target": "#add-player", id: "add-player" },
-              on: {
-                click: function($event) {
-                  _vm.show = !_vm.show
-                }
-              }
-            },
+            "md-ripple",
             [
-              _vm._v("Add Player "),
-              _c("span", {
-                staticClass: "glyphicon glyphicon-plus",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
+              _c(
+                "md-card-header",
+                [
+                  _c("md-card-header-text", [
+                    _c("div", { staticClass: "md-title" }, [
+                      _vm._v(_vm._s(player.player_name))
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "md-subhead" }, [
+                      _vm._v(_vm._s(player.team_abbreviation))
+                    ])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("md-card-content", [
+                _c("div", [_vm._v("PTS: " + _vm._s(player.pts))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("AST: " + _vm._s(player.ast))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("REB: " + _vm._s(player.reb))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("BLK: " + _vm._s(player.blk))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("TOV: " + _vm._s(player.tov))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("STL: " + _vm._s(player.stl))]),
+                _vm._v(" "),
+                _c("div", [
+                  _vm._v("Fantasy Points: " + _vm._s(player.nba_fantasy_pts))
+                ])
+              ])
+            ],
+            1
           )
-        ]),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "slide" } }, [
-          _vm.show
-            ? _c("div", { staticClass: "col-md-6" }, [_vm._v("new player")])
-            : _vm._e()
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm._m(0)
-  ])
+        ],
+        1
+      )
+    })
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
