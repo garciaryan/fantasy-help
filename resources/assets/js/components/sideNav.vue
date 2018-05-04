@@ -9,12 +9,6 @@
       </h6>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <router-link to="/home" class="nav-link active">
-            <span data-feather="home"></span>
-            Home <span class="sr-only">(current)</span>
-          </router-link>
-        </li>
-        <li class="nav-item">
           <router-link to="/compare" class="nav-link">
             <span data-feather="file"></span>
             <!-- Add counter for each player clicked -->

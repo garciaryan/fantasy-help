@@ -32,7 +32,6 @@ Vue.use(VueMaterial);
 Vue.component('new-player', require('./components/newPlayer.vue'));
 Vue.component('all-players', require('./components/allPlayers.vue'));
 Vue.component('side-nav', require('./components/sideNav.vue'));
-Vue.component('home', require('./components/home.vue'));
 Vue.component('search', require('./components/search.vue'));
 Vue.component('selected-players', require('./components/selectedPlayers.vue'));
 
