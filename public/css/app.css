@@ -10278,6 +10278,7 @@ main,
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  font-family: "Monospace", sans-serif;
 }
 
 .z-top {

@@ -1,13 +1,5 @@
 <template>
   <div>
-    <!-- <md-list>
-      <transition-group name="fade">
-        <md-list-item v-for="player in selectedPlayersID" :key="player.id">
-          <md-icon>remove_circle</md-icon>
-          {{ player.player_name }}
-        </md-list-item>
-      </transition-group>
-    </md-list> -->
     <div v-for="player in selectedPlayersID" :key="player.id">
       <md-chip class="chip-theme" md-deletable @click="deselectPlayer(player)">{{ player.player_name }}</md-chip>
     </div>

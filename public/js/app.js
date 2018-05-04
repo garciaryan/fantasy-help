@@ -42887,13 +42887,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    // let picUrl = 'https://nba-players.herokuapp.com/players/';
+    // axios.get(picUrl)
+  },
   data: function data() {
     return {
       selectedPlayersID: this.$store.state.selectedPlayersID
     };
-  }
+  },
+
+
+  methods: {}
 });
 
 /***/ }),
@@ -42945,8 +42960,28 @@ var render = function() {
                 _c("div", [_vm._v("STL: " + _vm._s(player.stl))]),
                 _vm._v(" "),
                 _c("div", [
-                  _vm._v("Fantasy Points: " + _vm._s(player.nba_fantasy_pts))
-                ])
+                  _vm._v("Fantasy Pts: " + _vm._s(player.nba_fantasy_pts))
+                ]),
+                _vm._v(" "),
+                _c("div", [_vm._v("3PT%: " + _vm._s(player.fg3_pct))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("3PA: " + _vm._s(player.fg3a))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("3PM: " + _vm._s(player.fg3m))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("FG%: " + _vm._s(player.fg_pct))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("FGA: " + _vm._s(player.fga))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("FGM: " + _vm._s(player.fgm))]),
+                _vm._v(" "),
+                _c("div", [
+                  _vm._v(
+                    "Fantasy Pts Rank: " + _vm._s(player.nba_fantasy_pts_rank)
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", [_vm._v("PTS Rank: " + _vm._s(player.pts_rank))])
               ])
             ],
             1
@@ -43132,14 +43167,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
