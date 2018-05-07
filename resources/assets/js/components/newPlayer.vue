@@ -38,6 +38,7 @@
 
 <script>
 import draggable from 'vuedraggable';
+import router from '../routes.js';
 
 export default {
 
@@ -60,8 +61,13 @@ export default {
       this.$swal({
         type: 'error',
         title: 'No players selected!',
-        text: 'Select some players to compare by clicking \'All Players\''
-      });
+        text: 'Select some players to compare.',
+        confirmButtonText: 'Start'
+      }).then(res => {
+        if (res.value){
+          router.push('players');
+        }
+      })
     }
   },
 

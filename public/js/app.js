@@ -42811,6 +42811,7 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuedraggable__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuedraggable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuedraggable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(41);
 //
 //
 //
@@ -42849,6 +42850,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -42872,7 +42874,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$swal({
         type: 'error',
         title: 'No players selected!',
-        text: 'Select some players to compare by clicking \'All Players\''
+        text: 'Select some players to compare.',
+        confirmButtonText: 'Start'
+      }).then(function (res) {
+        if (res.value) {
+          __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push('players');
+        }
       });
     }
   },
