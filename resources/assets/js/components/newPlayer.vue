@@ -14,21 +14,21 @@
             </md-card-media> -->
           </md-card-header>
           <md-card-content>
-            <div>PTS: {{ player.pts }}</div>
-            <div>AST: {{ player.ast}}</div>
-            <div>REB: {{ player.reb }}</div>
-            <div>BLK: {{ player.blk }}</div>
-            <div>TOV: {{ player.tov }}</div>
-            <div>STL: {{ player.stl }}</div>
-            <div>Fantasy Pts: {{ player.nba_fantasy_pts }}</div>
-            <div>3PT%: {{ player.fg3_pct }}</div>
-            <div>3PA: {{ player.fg3a }}</div>
-            <div>3PM: {{ player.fg3m }}</div>
-            <div>FG%: {{ player.fg_pct }}</div>
-            <div>FGA: {{ player.fga }}</div>
-            <div>FGM: {{ player.fgm }}</div>
-            <div>Fantasy Pts Rank: {{ player.nba_fantasy_pts_rank }}</div>
-            <div>PTS Rank: {{ player.pts_rank }}</div>
+            <div class="stats"><span>PTS: {{ player.pts }}</span></div>
+            <div class="stats"><span>AST: {{ player.ast}}</span></div>
+            <div class="stats"><span>REB: {{ player.reb }}</span></div>
+            <div class="stats"><span>BLK: {{ player.blk }}</span></div>
+            <div class="stats"><span>TOV: {{ player.tov }}</span></div>
+            <div class="stats"><span>STL: {{ player.stl }}</span></div>
+            <div class="stats"><span>Fantasy Pts: {{ player.nba_fantasy_pts }}</span></div>
+            <div class="stats"><span>3PT%: {{ player.fg3_pct }}</span></div>
+            <div class="stats"><span>3PA: {{ player.fg3a }}</span></div>
+            <div class="stats"><span>3PM: {{ player.fg3m }}</span></div>
+            <div class="stats"><span>FG%: {{ player.fg_pct }}</span></div>
+            <div class="stats"><span>FGA: {{ player.fga }}</span></div>
+            <div class="stats"><span>FGM: {{ player.fgm }}</span></div>
+            <div class="stats"><span>Fantasy Pts Rank: {{ player.nba_fantasy_pts_rank }}</span></div>
+            <div class="stats"><span>PTS Rank: {{ player.pts_rank }}</span></div>
           </md-card-content>
         </md-card>
       </transition-group>
