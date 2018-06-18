@@ -42859,8 +42859,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     if (this.selectedPlayersID.length < 1) {
       this.noPlayers();
     }
-    // let picUrl = 'https://nba-players.herokuapp.com/players/';
-    // axios.get(picUrl)
+    var picUrl = 'https://nba-players.herokuapp.com/players/';
+    var lastName = this.$store.state.selectedPlayersID.player_name;
+    axios.get('' + picUrl + lastName);
+    console.log('' + picUrl + lastName);
   },
   data: function data() {
     return {
