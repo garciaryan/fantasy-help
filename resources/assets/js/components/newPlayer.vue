@@ -12,6 +12,7 @@
             <!-- <md-card-media>
               <img src="" alt="">
             </md-card-media> -->
+            
           </md-card-header>
           <md-card-content>
             <div class="stats"><span>PTS: {{ player.pts }}</span></div>
