@@ -9,9 +9,10 @@
               <div class="md-title">{{ player.player_name }}</div>
               <div class="md-subhead">{{ player.team_abbreviation }}</div>
             </md-card-header-text>
-            <!-- <md-card-media>
-              <img src="" alt="">
-            </md-card-media> -->
+
+            <md-card-media>
+              <img :src="playerImg" alt="">
+            </md-card-media>
             
           </md-card-header>
           <md-card-content>
@@ -47,15 +48,28 @@ export default {
     if (this.selectedPlayersID.length < 1){
       this.noPlayers();
     }
-    let picUrl = 'https://nba-players.herokuapp.com/players/';
-    let lastName = this.$store.state.selectedPlayersID.player_name;
-    axios.get(`${picUrl}${lastName}`);
-    console.log(`${picUrl}${lastName}`);
+    const picUrl = 'https://nba-players.herokuapp.com/players/';
+    let players = this.$store.state.selectedPlayersID;
+    players.forEach(player => {
+      let name = player.player_name.split(" ");
+      let firstName = name[0];
+      let lastName = name[name.length -1];
+      let URL = `${picUrl}${lastName}/${firstName}`;
+      console.log(`${picUrl}${lastName}/${firstName}`);
+      
+      axios.get(`${picUrl}${lastName}/${firstName}`, {responseType: 'arraybuffer'})
+        .then(res => {
+          console.log(res);
+          this.playerImg = Buffer.from(res.data, 'binary').toString('base64');
+          console.log(this.playerImg);
+        })
+    });
   },
 
   data() {
     return {
-      selectedPlayersID: this.$store.state.selectedPlayersID
+      selectedPlayersID: this.$store.state.selectedPlayersID,
+      playerImg: ''
     }
   },
 

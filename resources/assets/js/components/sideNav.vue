@@ -54,7 +54,7 @@
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
-          <input type="text" class="date-search" placeholder="2017-18">
+          <input type="text" name="season_search" class="date-search" placeholder="2017-18">
         </li>
       </ul>
     </div>

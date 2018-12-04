@@ -10,8 +10,13 @@
                   :sortedPlayers="sortedPlayers"
                   >
       </all-players>
-      <!-- Find a new spinner, md isnt working -->
-      <vue-simple-spinner class="z-top spinner" size="huge" text-fg-color="#FFFFFF" message="Updating player stats..." v-if="checkLoading()"></vue-simple-spinner>
+      <vue-simple-spinner 
+        class="z-top spinner" 
+        size="huge" 
+        text-fg-color="#FFFFFF" 
+        message="Updating player stats..." 
+        v-if="checkLoading()">
+      </vue-simple-spinner>
     </div>
     <div class="row row-full-width search-container">
       <div class="col-md-6 flx-end">

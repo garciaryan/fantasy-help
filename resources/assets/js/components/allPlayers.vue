@@ -102,7 +102,8 @@ export default {
     axios.get('/api/update-players')
     .then(res => {
       this.$store.commit('loaded');
-    }).catch(err => {console.log(err);})
+    })
+    .catch(err => {console.log(err);})
   },
 
   props: [

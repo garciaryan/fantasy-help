@@ -16,9 +16,8 @@ class PlayerController extends Controller
     public function store()
     {
       try {
-
         $client = new Client();
-        $season = '2017-18';
+        $season = '2018-19';
         $seasonType = 'Regular Season';
 
         $res = $client->get('http://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=' . $season . '&SeasonSegment=&SeasonType=' . $seasonType . '&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=', ['headers' => [
