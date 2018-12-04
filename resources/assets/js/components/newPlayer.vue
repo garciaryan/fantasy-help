@@ -11,7 +11,7 @@
             </md-card-header-text>
 
             <md-card-media>
-              <img :src="playerImg" alt="">
+              <img :src="playerImgFormat + playerImg" alt="">
             </md-card-media>
             
           </md-card-header>
@@ -51,7 +51,7 @@ export default {
     const picUrl = 'https://nba-players.herokuapp.com/players/';
     let players = this.$store.state.selectedPlayersID;
     players.forEach(player => {
-      let name = player.player_name.split(" ");
+      let name = player.player_name.toLowerCase().split(" ");
       let firstName = name[0];
       let lastName = name[name.length -1];
       let URL = `${picUrl}${lastName}/${firstName}`;
@@ -69,7 +69,8 @@ export default {
   data() {
     return {
       selectedPlayersID: this.$store.state.selectedPlayersID,
-      playerImg: ''
+      playerImg: '',
+      playerImgFormat: 'data:image/png;base64,'
     }
   },
 

@@ -42866,7 +42866,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var picUrl = 'https://nba-players.herokuapp.com/players/';
     var players = this.$store.state.selectedPlayersID;
     players.forEach(function (player) {
-      var name = player.player_name.split(" ");
+      var name = player.player_name.toLowerCase().split(" ");
       var firstName = name[0];
       var lastName = name[name.length - 1];
       var URL = '' + picUrl + lastName + '/' + firstName;
@@ -42882,7 +42882,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       selectedPlayersID: this.$store.state.selectedPlayersID,
-      playerImg: ''
+      playerImg: '',
+      playerImgFormat: 'data:image/png;base64,'
     };
   },
 
@@ -44917,7 +44918,12 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("md-card-media", [
-                        _c("img", { attrs: { src: _vm.playerImg, alt: "" } })
+                        _c("img", {
+                          attrs: {
+                            src: _vm.playerImgFormat + _vm.playerImg,
+                            alt: ""
+                          }
+                        })
                       ])
                     ],
                     1
