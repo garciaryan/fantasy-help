@@ -48,20 +48,21 @@ export default {
     if (this.selectedPlayersID.length < 1){
       this.noPlayers();
     }
+
     const picUrl = 'https://nba-players.herokuapp.com/players/';
+
     let players = this.$store.state.selectedPlayersID;
+
     players.forEach(player => {
-      let name = player.player_name.toLowerCase().split(" ");
-      let firstName = name[0];
-      let lastName = name[name.length -1];
-      let URL = `${picUrl}${lastName}/${firstName}`;
-      console.log(`${picUrl}${lastName}/${firstName}`);
+      let name = player.player_name.toLowerCase().split(" "),
+       firstName = name[0],
+       lastName = name[name.length -1],
+       url = `${picUrl}${lastName}/${firstName}`;
       
-      axios.get(`${picUrl}${lastName}/${firstName}`, {responseType: 'arraybuffer'})
+      axios.get(url, {responseType: 'arraybuffer'})
         .then(res => {
-          console.log(res);
-          this.playerImg = Buffer.from(res.data, 'binary').toString('base64');
-          console.log(this.playerImg);
+          console.log(res.data);
+          return this.playerImg = Buffer.from(res.data, 'binary').toString('base64');
         })
     });
   },
