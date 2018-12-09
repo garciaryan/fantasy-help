@@ -42875,7 +42875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           url = '' + picUrl + lastName + '/' + firstName;
 
       axios.get(url, { responseType: 'arraybuffer' }).then(function (res) {
-        console.log(res.data);
+        console.log(res);
         return _this.playerImg = Buffer.from(res.data, 'binary').toString('base64');
       });
     });

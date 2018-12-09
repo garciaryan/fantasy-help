@@ -61,7 +61,7 @@ export default {
       
       axios.get(url, {responseType: 'arraybuffer'})
         .then(res => {
-          console.log(res.data);
+          console.log(res);
           return this.playerImg = Buffer.from(res.data, 'binary').toString('base64');
         })
     });
